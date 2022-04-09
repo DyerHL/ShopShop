@@ -1,13 +1,23 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShopShop.DataAccess;
+using ShopShop.Models;
 
 namespace ShopShop.Controllers
 {
     public class AgentsController : Controller
     {
+        private readonly IAgentsRepository _agentRepo;
+        
+        public AgentsController(IAgentsRepository agentsRepository)
+        {
+            _agentRepo = agentsRepository;
+        }
+
         // GET: AgentsController
         public ActionResult Index()
         {
+            List<Agent> agents = _agentRepo.GetAllAgents();
             return View();
         }
 
