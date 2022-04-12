@@ -8,7 +8,6 @@ namespace ShopShop.Controllers
    [Route("api/[controller]")]
    [ApiController]
     public class AgentsController : ControllerBase
-    public class AgentsController : ControllerBase
     {
         private readonly IAgentsRepository _agentRepo;
         

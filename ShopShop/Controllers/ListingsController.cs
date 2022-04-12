@@ -2,7 +2,7 @@
 
 namespace ShopShop.Controllers
 {
-    public class ListingsController : Controller
+    public class ListingsController : ControllerBase
     {
         public IActionResult Index()
         {
