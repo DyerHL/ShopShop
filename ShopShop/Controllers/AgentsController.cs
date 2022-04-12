@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ShopShop.Controllers
 {
-    public class AgentsController : Controller
+    public class AgentsController : ControllerBase
     {
         // GET: AgentsController
         public ActionResult Index()
