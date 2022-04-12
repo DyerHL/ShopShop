@@ -5,7 +5,9 @@ using ShopShop.Models;
 
 namespace ShopShop.Controllers
 {
-    public class AgentsController : Controller
+   [Route("api/[controller]")]
+   [ApiController]
+    public class AgentsController : ControllerBase
     {
         private readonly IAgentsRepository _agentRepo;
         
@@ -14,79 +16,72 @@ namespace ShopShop.Controllers
             _agentRepo = agentsRepository;
         }
 
-        // GET: AgentsController
-        public ActionResult Index()
+        // GET all agents
+        [HttpGet]
+        public List<Agent> GetAllAgents()
         {
-            List<Agent> agents = _agentRepo.GetAllAgents();
-            return View();
+            return _agentRepo.GetAllAgents();
         }
 
-        // GET: AgentsController/Details/5
-        public ActionResult Details(int id)
+        // GET an agent by their Id
+        [HttpGet("Agents/{id}")]
+        public ActionResult GetAgentById(int id)
         {
-            return View();
+            Agent agent = _agentRepo.GetAgentById(id);
+            if (agent == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(agent);
+            }
         }
 
-        // GET: AgentsController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: AgentsController/Create
+        // POST new agent
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult CreateAgent(Agent newagent)
+        {
+            if (newagent == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _agentRepo.AddAgent(newagent);
+                return Ok(newagent);
+            }
+        }
+
+        // PATCH an agent
+        [HttpPatch("Agents/{id}")]
+        public ActionResult EditAgent(int id, Agent updatedAgent)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _agentRepo.UpdateAgent(updatedAgent);
+                return Ok(updatedAgent);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return BadRequest(updatedAgent);
             }
         }
 
-        // GET: AgentsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
 
-        // POST: AgentsController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+
+        // DELETE an agent
+        [HttpDelete("Agents/{id}")]
+        public ActionResult DeleteAgent(int id, Agent agent)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                _agentRepo.DeleteAgent(id);
+                return Ok(agent);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
-            }
-        }
-
-        // GET: AgentsController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: AgentsController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
+                return BadRequest(agent);
             }
         }
     }
