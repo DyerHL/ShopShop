@@ -1,4 +1,4 @@
-ï»¿USE MASTER
+USE MASTER
 GO
 
 IF NOT EXISTS (
@@ -59,12 +59,11 @@ INSERT INTO [User] ([Name], Phone, [Type]) VALUES ('Jameka', '567-891-2345', 2)
 INSERT INTO [User] ([Name], Phone, [Type]) VALUES ('Brain', '345-678-9012', 1)
 INSERT INTO [User] ([Name], Phone, [Type]) VALUES ('Dylan', '456-789-1234', 2)
 
-INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('123 Main Street Nashville, TN', 10000, 10000, 'Store front, 2 Stories', 1985, 'Nashville', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing1image.jpg?toke[â€¦]4MTYzMn0.h4TJ0R_-RQF4hWwPXujPxCeGjvA4_bMxfmUSdiCJNy0' , 1, 3)
-INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('456 Pennsylvania Ave Nashville, TN', 80000, 80000, 'Parking Garage, 6 Stories', 2008, 'Nashville', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing2image.jpg?toke[â€¦]4MTY1Mn0.2efzFJyNW0BBUmM4eSVp1ZbJKgkqOyUqd-WeRfL0s0s' , 2, 1)
+INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('123 Main Street Nashville, TN', 10000, 10000, 'Store front, 2 Stories', 1985, 'Nashville', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing1image.jpg?toke[…]4MTYzMn0.h4TJ0R_-RQF4hWwPXujPxCeGjvA4_bMxfmUSdiCJNy0' , 1, 3)
+INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('456 Pennsylvania Ave Nashville, TN', 80000, 80000, 'Parking Garage, 6 Stories', 2008, 'Nashville', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing2image.jpg?toke[…]4MTY1Mn0.2efzFJyNW0BBUmM4eSVp1ZbJKgkqOyUqd-WeRfL0s0s' , 2, 1)
 INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('2000 Broadway Nashville, TN', 8000, 80000, 'Kitchen Equipment, 2 Stories', 1940, 'Nashville', 'https://images1.loopnet.com/i2/o7xywzbrC82huzXMdN62DiYLFRUN1BUeRsOLcIZqEQ8/1/multifamily-property-for-sale-5918-saint-antoine-st-detroit-mi-48202.jpg' , 3, 3)
 INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('357 Center Street, Franklin, TN', 80000, 80000, 'Parking Lot, 1 Story', 2008, 'Franklin', 'https://bhhscaliber.com/wp-content/uploads/2015/04/commercial-building.jpg' , 4, 4)
-INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('345 Maple Ave Antioch, TN', 5000, 5000, 'Office Space, Parking Lot', 1995, 'Antioch', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing1image.jpg?toke[â€¦]4MTYzMn0.h4TJ0R_-RQF4hWwPXujPxCeGjvA4_bMxfmUSdiCJNy0' , 1, 3)
-INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('5833 Main Street Nashville, TN', 80000, 80000, 'Parking Garage, Rooftop Access', 2013, 'Nashville', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing2image.jpg?toke[â€¦]4MTY1Mn0.2efzFJyNW0BBUmM4eSVp1ZbJKgkqOyUqd-WeRfL0s0s' , 2, 1)
+INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('345 Maple Ave Antioch, TN', 5000, 5000, 'Office Space, Parking Lot', 1995, 'Antioch', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing1image.jpg?toke[…]4MTYzMn0.h4TJ0R_-RQF4hWwPXujPxCeGjvA4_bMxfmUSdiCJNy0' , 1, 3)
+INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('5833 Main Street Nashville, TN', 80000, 80000, 'Parking Garage, Rooftop Access', 2013, 'Nashville', 'https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/listing2image.jpg?toke[…]4MTY1Mn0.2efzFJyNW0BBUmM4eSVp1ZbJKgkqOyUqd-WeRfL0s0s' , 2, 1)
 INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('294 Western Ave Franklin, TN', 8000, 80000, 'Store front, 1 Story', 2003, 'Franklin', 'https://images1.loopnet.com/i2/o7xywzbrC82huzXMdN62DiYLFRUN1BUeRsOLcIZqEQ8/1/multifamily-property-for-sale-5918-saint-antoine-st-detroit-mi-48202.jpg' , 3, 3)
 INSERT INTO Listing ([Address], Squarefoot, Rent, Details, YearBuilt, City, ImgURL, AgentId, UserId) VALUES ('4562 Nation Way', 4000, 4000, 'Corner Lot, Office Space', 1967, 'Nashville', 'https://bhhscaliber.com/wp-content/uploads/2015/04/commercial-building.jpg' , 4, 4)
-
