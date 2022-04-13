@@ -22,5 +22,19 @@ namespace ShopShop.Controllers
         {
             return _listingRepo.GetAllListings();
         }
+
+        [HttpGet("Listings/{id}")]
+        public ActionResult GetListingById(int id)
+        {
+            Listing listing = _listingRepo.GetListingById(id);
+                if (listing == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listing);
+            }
+        }
     }
 }
