@@ -7,5 +7,6 @@ namespace ShopShop.DataAccess
     public interface IListingRepository
     {
        List<Listing> GetAllListings();
+       Listing GetListingById(int id);
     }
 }

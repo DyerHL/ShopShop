@@ -71,6 +71,60 @@ namespace ShopShop.DataAccess
                 }
             }
         }
+
+        public Listing GetListingById(int id)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                                      SELECT
+                                      Id,
+                                      Address,
+                                      SquareFoot,
+                                      Rent,
+                                      Details,
+                                      YearBuilt,
+                                      City,
+                                      ImgUrl,
+                                      AgentId,
+                                      UserId
+                                      FROM Listing WHERE Id = @id
+                                      ";
+
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        Listing listing = new Listing
+                        {
+                            Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            Address = reader.GetString(reader.GetOrdinal("Address")),
+                            SquareFoot = reader.GetInt32(reader.GetOrdinal("SquareFoot")),
+                            Rent = reader.GetInt32(reader.GetOrdinal("Rent")),
+                            Details = reader.GetString(reader.GetOrdinal("Details")),
+                            YearBuilt = reader.GetInt32(reader.GetOrdinal("YearBuilt")),
+                            City = reader.GetString(reader.GetOrdinal("City")),
+                            ImgUrl = reader.GetString(reader.GetOrdinal("ImgUrl")),
+                            AgentId = reader.GetInt32(reader.GetOrdinal("AgentId")),
+                            UserId = reader.GetInt32(reader.GetOrdinal("UserId"))
+                        };
+
+                        reader.Close();
+                        return listing;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        return null;
+                    }
+                }
+            }
+        }
     }
 }
 
