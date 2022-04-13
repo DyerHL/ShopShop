@@ -1,12 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ShopShop.DataAccess;
+using ShopShop.Models;
 
 namespace ShopShop.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ListingsController : ControllerBase
     {
-        public IActionResult Index()
+        private readonly IListingRepository _listingRepo;
+
+        public ListingsController(IListingRepository listingRepository)
         {
-            return View();
+            _listingRepo = listingRepository;
+        }
+
+        [HttpGet]
+
+        public List<Listing> GetAllListings()
+        {
+            return _listingRepo.GetAllListings();
         }
     }
 }

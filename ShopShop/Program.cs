@@ -9,6 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IAgentsRepository, AgentsRepository>();
+builder.Services.AddTransient<IListingRepository, ListingsRepository>();
 
 var app = builder.Build();
 
