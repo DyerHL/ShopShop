@@ -125,6 +125,60 @@ namespace ShopShop.DataAccess
                 }
             }
         }
+
+        public void UpdateListing(Listing listing)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        Update Listing
+                        SET
+                            Address = @address
+                            SquareFoot = @squareFoot
+                            Rent = @rent
+                            Details = @details
+                            YearBuilt = @yearBuilt
+                            City = @city
+                            ImgUrl = @imgUrl
+                            AgentId = @agentId
+                        WHERE Id = @id";
+
+                    cmd.Parameters.AddWithValue("@address", listing.Address);
+                    cmd.Parameters.AddWithValue("@squareFoot", listing.SquareFoot);
+                    cmd.Parameters.AddWithValue("@details", listing.Details);
+                    cmd.Parameters.AddWithValue("@yearBuilt", listing.YearBuilt);
+                    cmd.Parameters.AddWithValue("@City", listing.City);
+                    cmd.Parameters.AddWithValue("@imgUrl", listing.ImgUrl);
+                    cmd.Parameters.AddWithValue("@agentId", listing.AgentId);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void DeleteListing(int id)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                        DELETE FROM Listing
+                        WHERE Id = @id
+                        ";
+
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
 
