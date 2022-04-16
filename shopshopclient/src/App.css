@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+#footerDiv {
+  background: #073abd;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 25%;
+  width: 100%;
+  left: 1096px;
+  top: 1133px;
+  border-radius: 0px; 
+}
