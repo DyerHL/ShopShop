@@ -1,16 +1,15 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Navbar from '../components/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import About from '../Views/About';
+import Footer from '../components/Footer';
 
 function Initialize() {
   return (
     <div>
         <Navbar />
-        <p>"Initialize file is working"</p>
-        <About />
         {/*Routing*/}
-        {/*Footer*/}
+        <Footer />
     </div>
   );
 }
