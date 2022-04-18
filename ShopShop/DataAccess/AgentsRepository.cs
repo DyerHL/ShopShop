@@ -135,7 +135,7 @@ namespace ShopShop.DataAccess
 
                 using (SqlCommand cmd = conn.CreateCommand())
                 {
-                    cmd.CommandText = @"UPDATE Owner
+                    cmd.CommandText = @"UPDATE Agent
                                         SET [Name] = @name, 
                                             Email = @email, 
                                             Phone = @phone
