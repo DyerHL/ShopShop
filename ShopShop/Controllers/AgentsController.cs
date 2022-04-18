@@ -57,18 +57,19 @@ namespace ShopShop.Controllers
         [HttpPatch("Agents/{id}")]
         public ActionResult EditAgent(int id, Agent updatedAgent)
         {
-            try
+            Agent agent = _agentRepo.GetAgentById(id);
+
+            if (agent != null)
             {
                 _agentRepo.UpdateAgent(updatedAgent);
                 return Ok(updatedAgent);
+
             }
-            catch (Exception ex)
+            else
             {
-                return BadRequest(updatedAgent);
+                return BadRequest(agent);
             }
         }
-
-
 
         // DELETE an agent
         [HttpDelete("Agents/{id}")]
