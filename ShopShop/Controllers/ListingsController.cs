@@ -36,5 +36,33 @@ namespace ShopShop.Controllers
                 return Ok(listing);
             }
         }
+
+        [HttpPatch("Listings/id")]
+        public ActionResult UpdateListing(int id, Listing updateListing)
+        {
+            try
+            {
+                _listingRepo.UpdateListing(updateListing);
+                return Ok(updateListing);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(updateListing);
+            }
+        }
+
+        [HttpDelete("Listings/{id}")]
+        public ActionResult DeleteListing(int id, Listing listing)
+        {
+            try
+            {
+                _listingRepo.DeleteListing(id);
+                return Ok(listing);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(listing);
+            }
+        }
     }
 }

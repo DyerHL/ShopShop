@@ -5,7 +5,7 @@ import 'bootstrap/js/src/collapse';
 
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand navbar-light justify-content-center">
+        <nav className="navbar navbar-expand navbar-light justify-content-center fixed-top bg-white">
             <a className="navbar-brand" to="/about">LOGO</a>
             <button
                 className="navbar-toggler"
