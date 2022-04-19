@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Footer from './components/Footer';
+import ListingsView from './views/ListingsView';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ListingsView></ListingsView>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

@@ -46,6 +46,10 @@
   border-radius: 0px; 
 }
 
+/* #listingBanner {
+  background: url("tennessee-nashville-best-time-to-visit-best-time-of-year.jpg");
+} */
+
 .about {
   display: flex;
   flex-direction: column;
