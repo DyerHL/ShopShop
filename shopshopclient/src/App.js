@@ -1,7 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
-import ListingsView from './views/ListingsView';
-import Footer from './components/Footer';
+import './App.scss';
+import ListingsView from './Views/ListingsView';
+import Footer from './Components/Footer';
 
 function App() {
   return (
