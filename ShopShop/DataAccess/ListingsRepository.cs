@@ -177,6 +177,43 @@ namespace ShopShop.DataAccess
             }
         }
 
+        public void AddListing(Listing listing)
+        {
+            using(SqlConnection conn = Connection)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"INSERT INTO Listing 
+                                                (Address,
+                                                SquareFoot,
+                                                Rent,
+                                                Details,
+                                                YearBuilt,
+                                                City,
+                                                ImgUrl,
+                                                AgentId,
+                                                UserId)
+                    OUTPUT Inserted.Id
+                    VALUES (@address, @squareFoot, @rent, @details, @year, @city, @imgurl, @agentId, @userId)";
+
+                    cmd.Parameters.AddWithValue("@address", listing.Address);
+                    cmd.Parameters.AddWithValue("@squareFoot", listing.SquareFoot);
+                    cmd.Parameters.AddWithValue("@rent", listing.Rent);
+                    cmd.Parameters.AddWithValue("@details", listing.Details);
+                    cmd.Parameters.AddWithValue("@year", listing.YearBuilt);
+                    cmd.Parameters.AddWithValue("@city", listing.City);
+                    cmd.Parameters.AddWithValue("@imgurl", listing.ImgUrl);
+                    cmd.Parameters.AddWithValue("@agentId", listing.AgentId);
+                    cmd.Parameters.AddWithValue("@userId", listing.UserId);
+
+                    int id = (int)cmd.ExecuteScalar();
+
+                    listing.Id = id;
+                }
+            }
+        }
+
         public void UpdateListing(Listing listing)
         {
             using (SqlConnection conn = Connection)

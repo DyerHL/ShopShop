@@ -51,6 +51,22 @@ namespace ShopShop.Controllers
             }
         }
 
+        [HttpPost]
+
+        public ActionResult AddListing(Listing newListing)
+        {
+            if(newListing == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                _listingRepo.AddListing(newListing);
+                return Ok(newListing);
+            }
+
+        }
+
         [HttpPatch("Listings/id")]
         public ActionResult UpdateListing(int id, Listing updateListing)
         {
