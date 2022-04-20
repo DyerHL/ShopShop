@@ -1,12 +1,12 @@
  import React from "react";
- import nashSkyline from '../assets/nashSkyline';
+ import nashSkyline from '../Assets/nashSkyline';
  
 
  export default function About() {
      return (
          <div className="about">
              <div>
-                 <img src={nashSkyline} className="about-skyline"/>
+                 <img src={nashSkyline} className="about-skyline" alt="Nashville Skyline"/>
              </div>
              <div className="about-name">
                  SHOP SHOP

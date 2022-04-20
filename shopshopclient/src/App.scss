@@ -43,7 +43,7 @@
   width: 100%;
   left: 1096px;
   top: 1133px;
-  border-radius: 0px; 
+  border-radius: 0px;
 }
 
 .about {
@@ -51,21 +51,21 @@
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-}
-.about-skyline {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.about-name {
-  margin: 20px 0px -15px 0px;
-  font-size: 1.75em;
-  font-weight: bold;
-}
-.about-details {
-  margin: 50px 100px 100px 100px;
-}
-.about-hr {
-  border: 1px solid black;
-  margin: 3px -45px
+  .about-skyline {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .about-name {
+    margin: 20px 0px -15px 0px;
+    font-size: 1.75em;
+    font-weight: bold;
+  }
+  .about-details {
+    margin: 50px 100px 100px 100px;
+  }
+  .about-hr {
+    border: 1px solid black;
+    margin: 3px -45px
+  }
 }
