@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
-import Footer from './components/Footer';
+// import Footer from './Components/Footer';
 
 function App() {
   return (
