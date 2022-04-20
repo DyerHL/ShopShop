@@ -37,6 +37,20 @@ namespace ShopShop.Controllers
             }
         }
 
+        [HttpGet("Listings/agent/{agentId}")]
+        public ActionResult GetListingByAgentId(int agentId)
+        {
+            List<Listing> listings = _listingRepo.GetListingsByAgentId(agentId);
+            if (listings == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(listings);
+            }
+        }
+
         [HttpPatch("Listings/id")]
         public ActionResult UpdateListing(int id, Listing updateListing)
         {
