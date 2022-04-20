@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ListingsView from './views/ListingsView';
+import Footer from './components/Footer';
 
 function App() {
   return (

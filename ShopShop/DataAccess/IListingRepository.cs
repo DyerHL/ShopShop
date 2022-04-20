@@ -8,6 +8,8 @@ namespace ShopShop.DataAccess
     {
        List<Listing> GetAllListings();
        Listing GetListingById(int id);
+        List<Listing> GetListingsByAgentId(int id);
+        public void AddListing(Listing listing);
         public void UpdateListing(Listing listing);
         public void DeleteListing(int id);
     }
