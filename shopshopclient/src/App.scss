@@ -46,25 +46,25 @@
   border-radius: 0px;
 }
 
-.about {
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  .about-skyline {
+  .img {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
-  .about-name {
+  .title {
     margin: 20px 0px -15px 0px;
     font-size: 1.75em;
     font-weight: bold;
   }
-  .about-details {
+  .div-body {
     margin: 50px 100px 100px 100px;
   }
-  .about-hr {
+  .hr {
     border: 1px solid black;
     margin: 3px -45px
   }
