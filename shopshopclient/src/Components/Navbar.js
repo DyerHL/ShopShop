@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/src/collapse';
 
@@ -21,19 +21,19 @@ export default function Navbar() {
             <div className="" id="navbarTogglerDemo02">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" to="/about">
+                        <Link className="nav-link" to="/about">
                             ABOUT
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" to="/agents">
+                        <Link className="nav-link" to="/agents">
                             AGENTS
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" to="/listings">
+                        <Link className="nav-link" to="/listings">
                             LISTINGS
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" to="/contact">
