@@ -8,7 +8,7 @@ function Initialize() {
   return (
     <div>
         <Navbar />
-        {/*Routing*/}
+        <Routing />
         <Footer />
     </div>
   );
