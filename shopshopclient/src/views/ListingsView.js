@@ -21,7 +21,6 @@ export default function ListingsView() {
         <h2>Description Listing Desc</h2>
         <h2>Agent Listing Agent Name</h2>
       </div>
-      <Footer></Footer>
     </div>
   );
 }
