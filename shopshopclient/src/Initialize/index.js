@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
+import Routing from '../Routes/index';
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from '../Components/Footer';
 import EditListingView from '../Views/EditListing';
@@ -10,7 +11,7 @@ function Initialize() {
   return (
     <div>
         <Navbar />
-        {/*Routing*/}
+        <Routing />
         <Footer />
     </div>
   );
