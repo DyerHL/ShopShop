@@ -16,7 +16,7 @@ export default function Routing() {
             <Routes>
                 <Route exact path="/" element={<About />} />
                 <Route exact path="/about" element={<About />} />
-                <Route exact path="/agents" element={<Agents />}/>
+                <Route exact path="/agents" element={<Agents />} />
                 <Route exact path="/contact" element={<Contact />} />
                 <Route exact path="/agentsListingsView" element={<AgentsListingsView />} />
                 <Route exact path="/agentLogin" element={<AgentLogin />} />
