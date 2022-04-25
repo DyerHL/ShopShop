@@ -1,4 +1,5 @@
  import React from "react";
+import AgentCard from "../Components/AgentCard";
 //  import nashSkyline from '../Assets/nashSkyline.jpg';
  
 

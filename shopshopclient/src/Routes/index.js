@@ -14,6 +14,7 @@ export default function Routing() {
     return (
         <>
             <Routes>
+<<<<<<< HEAD
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/agents" element={<Agents />}/>
@@ -25,6 +26,18 @@ export default function Routing() {
                 <Route path="/agentProfile" element={<AgentProfile />} />
                 <Route path="/agentsListingsView" element={<AgentsListingsView />} />
                 <Route path="/editListingView" element={<EditListingView />} />
+=======
+                <Route exact path="/" element={<About />} />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/agents" element={<Agents />} />
+                <Route exact path="/contact" element={<Contact />} />
+                <Route exact path="/agentsListingsView" element={<AgentsListingsView />} />
+                <Route exact path="/agentLogin" element={<AgentLogin />} />
+                <Route exact path="/agentHome" element={<AgentHome />} />
+                <Route exact path="/agentProfile" element={<AgentProfile />} />
+                <Route exact path="/listings" element={<ListingsView />} />
+                <Route exact path="/editListingView" element={<EditListingView />} />
+>>>>>>> master
             </Routes>
         </>
     )
