@@ -19,7 +19,9 @@ export default function Agents(){
     return (
         <div>
             <div className="body">
-                <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/AboutViewImage.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQWJvdXRWaWV3SW1hZ2UuanBnIiwiaWF0IjoxNjUwNDk3OTM2LCJleHAiOjE5NjU4NTc5MzZ9.oMoy8OksJVrgCuMSSLRvCCqORS2kzh81quAZMxFSEmA' className="img" />
+                <div className="img-div">
+                    <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/AgentViewImage.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQWdlbnRWaWV3SW1hZ2UuanBnIiwiaWF0IjoxNjUwOTM0MTE0LCJleHAiOjE5NjYyOTQxMTR9.7lXBcT14N_GqCMu7E6_k0fvelDSQt6XzDHxo7Wzx9Tw' className="img"  alt="nashville skyline"/>
+                </div>
                 <div className="title">
                     Our Agents
                     <hr className="hr" />

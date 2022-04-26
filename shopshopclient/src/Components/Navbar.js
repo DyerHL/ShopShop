@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/src/collapse';
+import ShopShopLogo from '../Assets/ShopShopLogo.png';
+
 
 export default function Navbar() {
     return (
         <nav className="navbar navbar-expand navbar-light justify-content-center fixed-top bg-white">
-            <a className="navbar-brand" to="/about">LOGO</a>
+            <Link className="navbar-brand navbar-logo" to="/about">
+                <img src={ShopShopLogo} alt='logo' style={{ width: '100px' }}/>
+            </Link>
             <button
                 className="navbar-toggler"
                 type="button"
