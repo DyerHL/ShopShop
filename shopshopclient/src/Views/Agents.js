@@ -1,20 +1,20 @@
 import React from "react";
 import AgentCard from "../Components/AgentCard";
+import { getAllAgents } from "../Data/AgentsData";
+import { useEffect, useState } from "react";
 
 export default function Agents(){
-    //const [agents, setAgents] = useState({});
+    const [agents, setAgents] = useState([]);
 
-   /*
    useEffect(() => {
        let isMounted = true;
        if (isMounted) {
-           getAgents().then(setAgents);
+           getAllAgents().then(setAgents);
        }
        return () => {
            isMounted = false;
        };
    }, []);
-    */ 
 
     return (
         <div>
@@ -28,13 +28,11 @@ export default function Agents(){
                 </div>
                 <div className="div-body">
                     <div>Our team of agents bring a level of knowledge and expereience that allows us to find creative solutions to your shop needs.</div>
-                    {/*
                     <div className="cards">
                         {agents.map((card) => (
-                            <AgentsCard setAgents={setAgents} card={card} />
+                            <AgentCard setAgents={setAgents} card={card} />
                         ))}
                     </div>
-                    */}
                 </div>
             </div>
         </div>

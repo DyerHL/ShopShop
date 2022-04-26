@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function AgentHome() {
   return (
@@ -6,9 +7,9 @@ export default function AgentHome() {
         <div className='page-title'>Agent Home</div>
         <hr />
         <div className='div-1 agent-link-div'>
-            <div className='link link-1'>View Current Listings</div>
-            <div className='link link-2'>Create New Listing</div>
-            <div className='link link-3'>Update Profile</div>
+            <Link className='link link-1' to="/agentsListings">View Current Listings</Link>
+            <Link className='link link-2' to="/postNewListing">Create New Listing</Link>
+            <Link className='link link-3' to="/agentProfile">Update Profile</Link>
         </div>
     </div>
   )
