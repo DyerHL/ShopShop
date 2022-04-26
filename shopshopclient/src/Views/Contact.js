@@ -5,7 +5,7 @@ import React from "react";
  export default function Contact() {
      return (
          <div className="body">
-            <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/AboutViewImage.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQWJvdXRWaWV3SW1hZ2UuanBnIiwiaWF0IjoxNjUwNDk3OTM2LCJleHAiOjE5NjU4NTc5MzZ9.oMoy8OksJVrgCuMSSLRvCCqORS2kzh81quAZMxFSEmA' alt="nashville skyline" className="img"/>
+            <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/ContactViewImage.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQ29udGFjdFZpZXdJbWFnZS5qcGciLCJpYXQiOjE2NTA5MzU2MDksImV4cCI6MTk2NjI5NTYwOX0.SFjmcL0WbMwK6jrQ6fxwb-SRHbmFylPjF2rbp31RAZg' alt="nashville skyline" className="img"/>
             <div className="title">
                  Contact Us
                  <hr className="hr"/>
