@@ -8,7 +8,6 @@ function Initialize() {
   return (
     <div>
         <Navbar />
-        <Agents />
         <Routing />
         <Footer />
     </div>

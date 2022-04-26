@@ -7,7 +7,7 @@ export default function AgentProfile() {
           <div className='page-title'>Agent Profile</div>
           <hr />
           <div className='div-1'>
-            <AgentProfileForm></AgentProfileForm>
+            <AgentProfileForm />
             <div className='profile-img'>Profile Picture</div>
           </div>
       </div>

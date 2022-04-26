@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <nav className="navbar navbar-expand navbar-light justify-content-center fixed-top bg-white">
             <Link className="navbar-brand navbar-logo" to="/about">
-                <img src={ShopShopLogo} alt='logo' style={{ width: '100px' }}/>
+                <img to="/" src={ShopShopLogo} alt='logo' style={{ width: '100px' }}/>
             </Link>
             <button
                 className="navbar-toggler"
