@@ -1,9 +1,6 @@
 import React from "react";
-<<<<<<< HEAD
-=======
 import Footer from "../Components/Footer";
 import ListingCard from "../Components/ListingCard";
->>>>>>> 1702239c7371b144a891b53942a97065ca99edbc
 import Navbar from "../Components/Navbar";
 
 
