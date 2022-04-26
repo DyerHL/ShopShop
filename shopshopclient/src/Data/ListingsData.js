@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const dbUrl = "shopshopserver.database.windows.net/api";
+const baseUrl = "https://localhost:7045/api";
 
 const getListings = () => new Promise((resolve, reject) => {
     axios
-        .get(`${dbUrl}/listings.json`)
+        .get(`${baseUrl}/listings`)
         .then((response) => resolve(Object.values(response.data)))
         .catch(reject);
 });

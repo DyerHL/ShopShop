@@ -2,6 +2,18 @@ using ShopShop.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var MyAllowSpecificOrigins = "_MyAllowSubdomainPolicy";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("https://*.example.com")
+                .SetIsOriginAllowedToAllowWildcardSubdomains();
+        });
+});
+
 // Add services to the container.
 
 builder.Services.AddControllers();
