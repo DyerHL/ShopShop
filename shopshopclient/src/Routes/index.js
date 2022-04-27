@@ -10,6 +10,7 @@ import CreateAgent from '../Views/CreateAgent';
 import AgentProfile from '../Views/AgentProfile';
 import AgentHome from '../Views/AgentHome';
 import EditListingView from '../Views/EditListing';
+import CreateListing from '../Views/CreateListing';
 
 export default function Routing() {
     return (
@@ -25,8 +26,9 @@ export default function Routing() {
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
                 <Route path="/agentHome" element={<AgentHome />} />
                 <Route path="/agentProfile" element={<AgentProfile />} />
-                <Route path="/agentsListingsView" element={<AgentsListingsView />} />
-                <Route path="/editListingView" element={<EditListingView />} />
+                <Route path="/agentsListings" element={<AgentsListingsView />} />
+                <Route path="/editListing" element={<EditListingView />} />
+                <Route path="/postNewListing" element={<CreateListing />} />
             </Routes>
         </>
     )
