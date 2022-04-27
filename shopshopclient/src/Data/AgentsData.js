@@ -1,18 +1,13 @@
-//import axios from 'axios';
+import axios from 'axios';
 
-const baseURL = 'shopshopserver.database.windows.net/api/Agents';
+const baseURL = "https://localhost:7045/api/Agents";
 
-// const getAllAgents = () => new Promise((resolve, reject) => {
-//     axios.get(`${baseURL}/Agents.json`)
-//     .then((response) => resolve(Object.values(response.data)))
-//     .catch(reject);
-// });
-
-const getAllAgents = () => new Promise((resolve,reject) => {
-    return fetch(`${baseURL}.json`)
-    .then((res) => resolve(Object.values(res.data)))
-    .catch(reject)
+const getAllAgents = () => new Promise((resolve, reject) => {
+    axios.get(`${baseURL}`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
 });
+
 
 const addAgent = () => {};
 
