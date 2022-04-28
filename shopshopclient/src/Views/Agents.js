@@ -1,6 +1,6 @@
 import React from "react";
 import AgentCard from "../Components/AgentCard";
-import { getAllAgents, getAgentById } from "../Data/AgentsData";
+import { getAllAgents } from "../Data/AgentsData";
 import { useEffect, useState } from "react";
 
 export default function Agents(){

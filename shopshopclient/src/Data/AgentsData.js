@@ -15,12 +15,7 @@ const getAgentById = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-
-
-const addAgent = () => {};
-
 export {
     getAllAgents,
     getAgentById,
-    addAgent,
  };

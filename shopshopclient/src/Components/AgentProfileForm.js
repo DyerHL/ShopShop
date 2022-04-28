@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 const initialState = {
     picture: '',
-    firstName: '',
-    lastName: '',
-    phoneNum: '',
+    name: '',
+    phone: '',
     email: '',
+    username: '',
     password: '',
 }
 
@@ -26,31 +26,31 @@ export default function AgentProfileForm() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor='username'>
-                Picture:
-                <input type='text' id='picture' value={formInput.picture || ''} onChange={handleChange} />
+            <label htmlFor='picture'>
+                Img Url:
+                <input type='text' id='picture' value={formInput.imgUrl || ''} onChange={handleChange} />
             </label>
-            <label htmlFor='firstName'>
-                Password:
-                <input type='text' id='firstName' value={formInput.firstName || ''} onChange={handleChange} />
+            <label htmlFor='name'>
+                Name:
+                <input type='text' id='name' value={formInput.name || ''} onChange={handleChange} />
             </label>
-            <label htmlFor='lastName'>
-                Picture:
-                <input type='text' id='lastName' value={formInput.lastName || ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='phoneNum'>
-                Password:
-                <input type='text' id='phoneNum' value={formInput.phoneNum || ''} onChange={handleChange} />
+            <label htmlFor='phone'>
+                Phone Number:
+                <input type='text' id='phone' value={formInput.phone || ''} onChange={handleChange} />
             </label>
             <label htmlFor='email'>
-            Username:
-            <input type='text' id='email' value={formInput.email || ''} onChange={handleChange} />
-        </label>
-        <label htmlFor='password'>
-            Password:
-            <input type='text' id='password' value={formInput.password || ''} onChange={handleChange} />
-        </label>
-            <input type="submit" value="Submit" />
+                Email:
+                <input type='text' id='phoneNum' value={formInput.email|| ''} onChange={handleChange} />
+            </label>
+            <label htmlFor='email'>
+                Username:
+                <input type='text' id='email' value={formInput.username || ''} onChange={handleChange} />
+            </label>
+            <label htmlFor='password'>
+                Password:
+                <input type='text' id='password' value={formInput.password || ''} onChange={handleChange} />
+            </label>
+                <input type="submit" value="Submit" />
         </form>
       )
     }
