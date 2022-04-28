@@ -8,9 +8,9 @@ export default function AgentCard({card}) {
                 <img src='https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png' className="img" />
             </div>
             <div className="agent-card-body">
-                <div className="item">{/*{card.Name}*/} Name</div>
-                <div className="item">{/*{card.Bio}*/} Bio</div>
-                <div className="item">{/*{card.Email}*/} Email</div>
+                <div className="item">{card.name}</div>
+                <div className="item">{card.bio}</div>
+                <div className="item">{card.email}</div>
             </div>
 
         </div>
@@ -18,5 +18,5 @@ export default function AgentCard({card}) {
 }
 
 AgentCard.propTypes = {
-    card: PropTypes.shape(PropTypes.obj),
+    card: PropTypes.shape(PropTypes.obj).isRequired,
 };
