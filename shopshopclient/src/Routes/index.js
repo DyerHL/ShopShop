@@ -24,8 +24,8 @@ export default function Routing() {
                 <Route path="/agentLogin" element={<AgentLogin />} />
                 <Route path="/createAgent" element={<CreateAgent />} />
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
-                <Route path="/agentHome" element={<AgentHome />} />
-                <Route path="/agentProfile" element={<AgentProfile />} />
+                <Route path="/agentHome/:key" element={<AgentHome />} />
+                <Route path="/agentProfile/:key" element={<AgentProfile />} />
                 <Route path="/agentsListings" element={<AgentsListingsView />} />
                 <Route path="/editListing" element={<EditListingView />} />
                 <Route path="/postNewListing" element={<CreateListing />} />
