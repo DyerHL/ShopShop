@@ -19,6 +19,8 @@ export default function SingleListingView() {
       console.warn(listing);
 
   return (
-    <div>{listing.city}</div>
+    <div>
+      <h1>{listing.city}</h1>
+    </div>
   )
 }
