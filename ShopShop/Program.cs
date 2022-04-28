@@ -3,7 +3,6 @@ using ShopShop.DataAccess;
 var builder = WebApplication.CreateBuilder(args);
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
 // Add services to the container.
 
 builder.Services.AddCors(options =>
