@@ -1,14 +1,19 @@
 import React from 'react'
+import PropTypes from "prop-types";
 
-export default function ListingCard() {
+export default function ListingCard({listing}) {
   return (
     <div>
-        <h2>Location Listing Location</h2>
-        <h2>Price Listing Price</h2>
-        <h2>Square Footage Listing SqFt</h2>
-        <h2>Year Built Listing Year</h2>
-        <h2>Description Listing Desc</h2>
-        <h2>Agent Listing Agent Name</h2>
+        <h2>{listing.address}</h2>
+        <h2>{listing.city}</h2>
+        <h2>{listing.details}</h2>
+        <h2>${listing.rent}</h2>
+        <h2>{listing.squareFoot}</h2>
+        <h2>{listing.yearBuilt}</h2>
     </div>
   )
+}
+
+ListingCard.Proptype = {
+  listing: PropTypes.shape(PropTypes.obj).isRequired
 }
