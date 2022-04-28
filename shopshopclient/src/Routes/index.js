@@ -11,7 +11,7 @@ import AgentProfile from '../Views/AgentProfile';
 import AgentHome from '../Views/AgentHome';
 import EditListingView from '../Views/EditListing';
 
-export default function Routing() {
+export default function Routing(agent) {
     return (
         <>
             <Routes>

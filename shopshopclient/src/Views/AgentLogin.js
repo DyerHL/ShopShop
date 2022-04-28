@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function AgentLogin() {
   return (
@@ -9,7 +10,9 @@ export default function AgentLogin() {
             <div className='login-title'>Login</div>
             <div className='login-form'>Login Form
               <div className='login-button'>Login</div>
-              <div className='create-account-button'> Create Account</div>
+              <Link>
+                <div className='create-account-button' to='/createAgent'>Create Account</div>
+              </Link>
             </div>
         </div>
       </div>

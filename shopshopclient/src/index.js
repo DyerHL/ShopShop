@@ -4,8 +4,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebaseConfig from './Data/APIKeys';
+import { initializeApp } from 'firebase/app';
 import Initialize from './Initialize';
 import 'bootstrap/dist/css/bootstrap.css';
+// import { getAuth } from 'firebase/auth';
+
+initializeApp(firebaseConfig)
+// const auth = getAuth()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
