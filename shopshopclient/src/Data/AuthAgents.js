@@ -1,26 +1,28 @@
+import { initializeApp } from 'firebase/app';
+import firebaseConfig from './APIKeys';
 import { 
     getAuth,
     createUserWithEmailAndPassword,
  } from 'firebase/auth';
 
-const auth = getAuth()
+initializeApp(firebaseConfig);
 
-// Create New Agent Accounts
-const signupForm = document.querySelector('.signUp')
-signupForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+const auth = getAuth();
 
-    const email = signupForm.email.value;
-    const password = signupForm.email.value;
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((cred) => {
+const SignupAgent = (formInput) => {
+    console.warn('SA' , {...formInput})
+   const email = formInput.email.value;
+   const password = formInput.password.value;
+
+   createUserWithEmailAndPassword(auth, email, password)
+    .then(cred => {
         console.warn('USER CREATED', cred.user)
-        signupForm.reset();
     })
-    .catch((err) => {
-        console.warn('AGENT CREATION ERROR')
+    .catch(err => {
+        console.warn('AGENT CREATEION ERROR', err.message)
     })
-});
+
+}
 
 
 // const signInUser = () => {
@@ -33,5 +35,5 @@ signupForm.addEventListener('submit', (e) => {
   export { 
     // signInUser, 
     // signOutUser, 
-    signupForm 
+    SignupAgent 
 };

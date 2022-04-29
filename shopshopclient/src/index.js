@@ -1,17 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import firebaseConfig from './Data/APIKeys';
 import { initializeApp } from 'firebase/app';
+import firebaseConfig from './Data/APIKeys';
+import './App.scss';
+import reportWebVitals from './reportWebVitals';
 import Initialize from './Initialize';
 import 'bootstrap/dist/css/bootstrap.css';
-// import { getAuth } from 'firebase/auth';
 
-initializeApp(firebaseConfig)
-// const auth = getAuth()
+initializeApp(firebaseConfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -11,10 +11,10 @@ export default function Footer() {
         <Link className="navbar-brand navbar-logo" to="/about">
                 <img src={ShopShopLogo} alt='logo' style={{ width: '100px' }}/>
         </Link>
-        <footer id="footerContactInfo">
-          <a>info@shopshop.com</a>
-          <p>123 Main Street, Nashville, TN, 37213</p>
-          <p>615-555-1000</p>
+        <footer className="footer-contact-info">
+          <p className="footer-email">info@shopshop.com</p>
+          <p className="footer-address">123 Main Street, Nashville, TN, 37213</p>
+          <p className="footer-phone">615-555-1000</p>
         </footer>
       </div>
   );
