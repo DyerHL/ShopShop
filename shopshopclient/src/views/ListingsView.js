@@ -19,26 +19,26 @@ export default function ListingsView() {
 
   return (
     <div className="body">
+      <img className="img"
+      src="https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/ListingViewImageCr.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvTGlzdGluZ1ZpZXdJbWFnZUNyLnBuZyIsImlhdCI6MTY1MTI2NDUxNCwiZXhwIjoxOTY2NjI0NTE0fQ.cP5YKURZdhD6GboCSxNHhtK3GmBHeakY1aALV5ZBOCg"
+      alt="listing-img"/>
       <div className="title">
-        SHOP SHOP
-        <hr className="hr" />
+        Listings
+      <hr className="hr" />
       </div>
-      <h2>Listings</h2>
+
       <div className="div-body">
-        <img
-          src="https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/ListingViewImage.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvTGlzdGluZ1ZpZXdJbWFnZS5qcGciLCJpYXQiOjE2NTA0OTc5MDIsImV4cCI6MTk2NTg1NzkwMn0.g7BVed0bJPnszxGLWGytOMCxISDAyXRalTUrrQa_DdU"
-          alt="listing-img"
-        />
-        <div className="cards">
-          {listings.map((listing) => (
-            <ListingCard
-              key= {listing.id}
-              setListings={setListings}
-              listing={listing}
-            />
-          ))}
-        </div>
       </div>
+      <div className="cards">
+        {listings.map((listing) => (
+          <ListingCard
+            key= {listing.id}
+            setListings={setListings}
+            listing={listing}
+          />
+        ))}
+      </div>
+
     </div>
   );
 }

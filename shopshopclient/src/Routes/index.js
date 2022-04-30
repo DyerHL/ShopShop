@@ -12,7 +12,7 @@ import AgentHome from '../Views/AgentHome';
 import EditListingView from '../Views/EditListing';
 import CreateListing from '../Views/CreateListing';
 
-export default function Routing() {
+export default function Routing(agent) {
     return (
         <>
             <Routes>

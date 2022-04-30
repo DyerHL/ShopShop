@@ -17,8 +17,30 @@
   left: 1096px;
   top: 1133px;
   border-radius: 0px;
+  .nav-link {
+    color: white;
+    margin-top: 4rem;
+    font-size: 1em;
+  }
   .footer-logo {
+    justify-items: center;
     max-width: 6rem;
+  }
+  .footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    .footer-email {
+      font-weight: bold;
+      text-decoration: underline;
+      font-size: 1.2em;
+    }
+    .footer-address {
+      font-size: 1em;
+    }
+    .footer-phone {
+      font-weight: bold;
+      font-size: 1em;
+    }
   }
 }
 
@@ -31,18 +53,29 @@
       display: flex;
       flex-direction: row;
       width: 100%;
+      margin-top: 4.8rem;
     }
   .title {
     margin: 20px 0px -15px 0px;
     font-size: 1.75em;
     font-weight: bold;
   }
-  .div-body {
-    margin: 50px 100px 100px 100px;
-  }
   .hr {
     border: 1px solid black;
     margin: 3px -45px
+  }
+  .div-body {
+    margin: 50px 100px 100px 100px;
+    .div-body2{
+      display: flex;
+      flex-direction: row;
+      .div-body-address{
+        width: 25%;
+      }
+      .div-body-content {
+        width: 75%
+      }
+    }
   }
 }
 

@@ -6,7 +6,7 @@ import AgentCard from "../Components/AgentCard";
  export default function About() {
      return (
          <div className="body">
-            <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/AboutViewImage.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQWJvdXRWaWV3SW1hZ2UuanBnIiwiaWF0IjoxNjUwNDk3OTM2LCJleHAiOjE5NjU4NTc5MzZ9.oMoy8OksJVrgCuMSSLRvCCqORS2kzh81quAZMxFSEmA' alt="nashville skyline" className="img"/>
+            <img src='https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/AboutViewImageCr.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQWJvdXRWaWV3SW1hZ2VDci5wbmciLCJpYXQiOjE2NTEyNjQwNzIsImV4cCI6MTk2NjYyNDA3Mn0.0Ix7kSdFHBmgtjQqoQ4ZZfdIcLhDMhRwxssOLvDqxqc' alt="nashville skyline" className="img"/>
             <div className="title">
                  SHOP SHOP
                  <hr className="hr"/>
