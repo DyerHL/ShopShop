@@ -10,8 +10,8 @@ export default function AgentRoutes() {
   return (
     <>
         <Routes>
-            <Route path="/agentHome" element={<AgentHome />} />
-            <Route path="/agentProfile" element={<AgentProfile />} />
+            <Route path="/agentHome/:key" element={<AgentHome />} />
+            <Route path="/agentProfile/:key" element={<AgentProfile />} />
             <Route path="/agentsListings" element={<AgentsListingsView />} />
             <Route path="/editListing" element={<EditListingView />} />
             <Route path="/postNewListing" element={<CreateListing />} />

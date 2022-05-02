@@ -8,12 +8,14 @@ const getAllAgents = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-
-
-
-const addAgent = () => {};
+//current return type is object, may need to be updated later depending on usage
+const getAgentById = (id) => new Promise((resolve, reject) => {
+    axios.get(`${baseURL}/Agents/${id}`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
 
 export {
     getAllAgents,
-    addAgent,
+    getAgentById,
  };
