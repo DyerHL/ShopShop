@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default function ListingCard({listing}) {
   return (
     <div className='listing-card'>
-      <img class="img" src={listing.imgUrl} alt="img" />
+      <img className="img" src={listing.imgUrl} alt="img" />
       <div className='listing-card-body'>
         <h6>{listing.address}</h6>
         <h6>{listing.city}</h6>
@@ -16,7 +16,7 @@ export default function ListingCard({listing}) {
         <Link
               type="button"
               className="btn btn-primary"
-              to={`/Listings/Listings/${listing.id}`}
+              to={`/listings/${listing.id}`}
             >
               Details
         </Link>

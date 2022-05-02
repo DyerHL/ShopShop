@@ -21,7 +21,7 @@ export default function Routing() {
                 <Route path="/about" element={<About />} />
                 <Route path="/agents" element={<Agents />}/>
                 <Route path="/listings" element={<ListingsView />} />
-                <Route path="/listings/listings/:id" element={<SingleListingView />} />
+                <Route path="/listings/:id" element={<SingleListingView />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/agentLogin" element={<AgentLogin />} />
                 <Route path="/createAgent" element={<CreateAgent />} />

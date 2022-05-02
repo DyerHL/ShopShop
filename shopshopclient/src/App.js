@@ -1,7 +1,5 @@
 import logo from './logo.svg';
 import './App.scss';
-import Footer from './Components/Footer';
-import CreateListing from './Views/CreateListing';
 
 function App() {
   return (
@@ -11,7 +9,6 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <CreateListing></CreateListing>
         <a
           className="App-link"
           href="https://reactjs.org"

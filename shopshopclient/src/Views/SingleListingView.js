@@ -9,18 +9,22 @@ export default function SingleListingView() {
     useEffect(() => {
         let isMounted = true;
         if (isMounted) {
-          getListingsById(id).then(setListing);
+          getListingsById(id).then((listing) => setListing(listing));
         }
         return () => {
           isMounted = false;
         };
       }, [id]);
 
-      console.warn(listing);
-
   return (
-    <div>
-      <h1>{listing.city}</h1>
+    <div className='body'>
+      <h1>Test</h1>
+      <h6>{listing.address}</h6>
+        <h6>{listing.city}</h6>
+        <h6>{listing.details}</h6>
+        <h6>${listing.rent}</h6>
+        <h6>Square Feet: {listing.squareFoot}</h6>
+        <h6>Year Built: {listing.yearBuilt}</h6>
     </div>
   )
 }
