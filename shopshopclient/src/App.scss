@@ -125,3 +125,16 @@
     align-items: flex-start;
   }
 }
+
+#singleListingDiv{
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-item{
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
