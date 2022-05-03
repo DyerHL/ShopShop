@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export default function AgentLogin() {
   return (
     <div className='body agent-login-body'>
+      <div className='img'></div>
       <div className="title">
           Agent Login
           <hr className="hr" />

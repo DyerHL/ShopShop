@@ -3,9 +3,15 @@ import ListingForm from '../Components/ListingForm';
 
 export default function CreateListing() {
   return (
-    <div>
-      <div>Testing</div>
-        <ListingForm />
+    <div className='body'>
+      <div className='img'></div>
+      <div className='title'>
+        Create Listing
+        <hr className='hr' />
+      </div>
+      <div className='div-body'>
+       <ListingForm />
+      </div>
     </div>
   )
 }

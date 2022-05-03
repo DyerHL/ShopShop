@@ -24,24 +24,14 @@ export default function LoginForm() {
     }
 
   return (
-    <form onSubmit={handleSubmit}>
-        {/* <label htmlFor='username'>
+    <form className='form-body' onSubmit={handleSubmit}>
+        <label className='form-label' htmlFor='username'>
             Username:
-            <input type='text' id='username' value={formInput.username || ''} onChange={handleChange} />
+            <input type='text' id='username' className='form-input' value={formInput.username || ''} onChange={handleChange} />
         </label>
-        <label htmlFor='password'>
+        <label className='form-label' htmlFor='password'>
             Password:
-            <input type='text' id='password' value={formInput.password || ''} onChange={handleChange} />
-        </label>
-        <input type="submit" value="Submit" /> */}
-
-        <label htmlFor='username'>
-            Username:
-            <input type='text' id='username' value={formInput.username || ''} onChange={handleChange} />
-        </label>
-        <label htmlFor='password'>
-            Password:
-            <input type='text' id='password' value={formInput.password || ''} onChange={handleChange} />
+            <input type='text' id='password' className='form-input' value={formInput.password || ''} onChange={handleChange} />
         </label>
         <input type="submit" value="Submit" />
     </form>

@@ -141,3 +141,11 @@
   flex-direction: row;
   justify-content:space-between;
 }
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  .form-input {
+    margin-left: .2rem;
+  }
+}
