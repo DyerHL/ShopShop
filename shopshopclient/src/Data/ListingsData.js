@@ -16,4 +16,11 @@ const getListingsById = (id) => new Promise((resolve, reject) => {
         .catch(reject);
 });
 
-export {getListings, getListingsById};
+const deleteListing = (id) => new Promise((resolve, reject) => {
+    axios
+        .delete(`${baseUrl}/listings/listings/${id}.json`)
+        .then((response) => resolve(response.data))
+        .catch(reject)
+})
+
+export {getListings, getListingsById, deleteListing};
