@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ListingCard from "../Components/ListingCard";
-import getListings from "../Data/ListingsData";
+import {getListings} from "../Data/ListingsData";
 
 export default function ListingsView() {
   const [listings, setListings] = useState([]);
@@ -14,8 +14,6 @@ export default function ListingsView() {
       isMounted = false;
     };
   }, []);
-
-  console.warn(listings);
 
   return (
     <div className="body">
