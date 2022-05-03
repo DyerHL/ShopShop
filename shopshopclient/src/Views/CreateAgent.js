@@ -5,9 +5,10 @@ import CreateAgentForm from '../Components/CreateAgentForm'
 export default function CreateAgent() {
     return (
         <div className='body'>
-            <div className='img'></div>
-            <div className='title page-title'>Create Agent</div>
-            <hr className="hr"/> 
+            <div className="title">
+                Create Agent
+                <hr className="hr" />
+            </div>
             <div className='div-body'>
                 <div className='div-1'>
                     {/* <AgentProfileForm></AgentProfileForm>

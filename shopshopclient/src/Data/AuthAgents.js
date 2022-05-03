@@ -16,10 +16,10 @@ const SignupAgent = (formInput) => {
 
    createUserWithEmailAndPassword(auth, email, password)
     .then(cred => {
-        console.warn('USER CREATED', cred.user)
+        console.warn('AGENT CREATED', cred.user)
     })
     .catch(err => {
-        console.warn('AGENT CREATEION ERROR', err.message)
+        console.warn('AGENT CREATION ERROR', err.message)
     })
 
 }

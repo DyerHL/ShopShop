@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 
 export default function AgentLogin() {
   return (
-    <div className=' body agent-login-body'>
-      <div className='page-title'>Agent Login</div>
-      <hr />
+    <div className='body agent-login-body'>
+      <div className="title">
+          Agent Login
+          <hr className="hr" />
+      </div>
       <div className='div-body'>
         <div className='div-1 form-div'>
             <div className='login-title'>Login</div>
