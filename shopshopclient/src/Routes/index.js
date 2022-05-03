@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import About from '../Views/About';
 import ListingsView from '../Views/ListingsView';
+import SingleListingView from '../Views/SingleListingView';
 import Agents from '../Views/Agents';
 import Contact from '../Views/Contact';
 import AgentsListingsView from '../Views/Agent\'sListings';
@@ -20,6 +21,7 @@ export default function Routing(agent) {
                 <Route path="/about" element={<About />} />
                 <Route path="/agents" element={<Agents />}/>
                 <Route path="/listings" element={<ListingsView />} />
+                <Route path="/listings/:id" element={<SingleListingView />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/agentLogin" element={<AgentLogin />} />
                 <Route path="/createAgent" element={<CreateAgent />} />

@@ -9,4 +9,11 @@ const getListings = () => new Promise((resolve, reject) => {
         .catch(reject);
 });
 
-export default getListings;
+const getListingsById = (id) => new Promise((resolve, reject) => {
+    axios
+        .get(`${baseUrl}/listings/listings/${id}`)
+        .then((response) => resolve(response.data))
+        .catch(reject);
+});
+
+export {getListings, getListingsById};
