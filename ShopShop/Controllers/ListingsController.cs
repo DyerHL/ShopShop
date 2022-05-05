@@ -82,16 +82,16 @@ namespace ShopShop.Controllers
         }
 
         [HttpDelete("Listings/{id}")]
-        public ActionResult DeleteListing(int id, Listing listing)
+        public ActionResult DeleteListing(int id)
         {
             try
             {
                 _listingRepo.DeleteListing(id);
-                return Ok(listing);
+                return Ok(id);
             }
             catch (Exception ex)
             {
-                return BadRequest(listing);
+                return BadRequest("DELETE FAILED");
             }
         }
     }

@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from "prop-types";
+import { Button } from 'reactstrap';
+import { deleteListing } from '../Data/ListingsData';
 
-export default function ListingCard({listing}) {
+export default function ListingCard({listing, setListings}) {
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    deleteListing(listing.id).then(setListings);
+  }
   return (
     <div className='listing-card'>
       <img className="img" src={listing.imgUrl} alt="img" />
@@ -20,11 +27,13 @@ export default function ListingCard({listing}) {
             >
               Details
         </Link>
+        <Button type="button" className='btn-danger' onClick={(e) => handleDelete(e)}>DELETE</Button>
       </div>
     </div>
   )
 }
 
 ListingCard.Proptype = {
-  listing: PropTypes.shape(PropTypes.obj).isRequired
+  listing: PropTypes.shape(PropTypes.obj).isRequired,
+  setListings: PropTypes.func.isRequired
 }
