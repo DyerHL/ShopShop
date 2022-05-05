@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 
 const initialState = {
     username: '',
@@ -7,9 +7,6 @@ const initialState = {
 
 export default function LoginForm() {
     const [formInput, setFormInput] = useState(initialState);
-
-    // const emailRef = useRef();
-    // const passwordRef = useRef();
 
     const handleChange = (e) => {
         setFormInput((prevState) => ({
@@ -24,7 +21,7 @@ export default function LoginForm() {
     }
 
   return (
-    <form className='form-body' onSubmit={handleSubmit}>
+    <form className="form-body" onSubmit={handleSubmit}>
         <label className='form-label' htmlFor='username'>
             Username:
             <input type='text' id='username' className='form-input' value={formInput.username || ''} onChange={handleChange} />

@@ -1,13 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from './APIKeys';
+import auth from './APIKeys';
 import { 
-    getAuth,
     createUserWithEmailAndPassword,
  } from 'firebase/auth';
-
-initializeApp(firebaseConfig);
-
-const auth = getAuth();
 
 const SignupAgent = (formInput) => {
     console.warn('SA' , {...formInput})
@@ -16,6 +10,7 @@ const SignupAgent = (formInput) => {
 
    createUserWithEmailAndPassword(auth, email, password)
     .then(cred => {
+        const user = cred.user;
         console.warn('AGENT CREATED', cred.user)
     })
     .catch(err => {
