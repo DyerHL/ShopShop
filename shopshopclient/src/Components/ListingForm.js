@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const initialState = {
     address: '',
@@ -12,6 +12,22 @@ const initialState = {
 
 export default function ListingForm() {
     const [formInput, setFormInput] = useState(initialState);
+
+    useEffect(() => {
+        if(listing.id){
+
+            setFormInput({
+                address: listing.address,
+                squareFoot: listing.squareFoot,
+                rent: listing.rent,
+                city: listing.city,
+                yearBuilt: listing.yearBuilt,
+                description: listing.description,
+                agent: listing.agent
+            });
+        }
+      }, [listing]);
+    
 
     const handleChange = (e) => {
         setFormInput((prevState) => ({
