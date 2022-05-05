@@ -11,7 +11,11 @@ export default function CreateAgent() {
                 <hr className='hr' />
             </div>
             <div className='div-body'>
-                <CreateAgentForm />
+                <div className='div-1'>
+                    {/* <AgentProfileForm></AgentProfileForm>
+                    <div className='profile-img'>Profile Picture</div> */}
+                    <CreateAgentForm />
+                </div>
             </div>
         </div>
     )
