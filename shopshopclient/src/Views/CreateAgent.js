@@ -12,7 +12,7 @@ export default function CreateAgent() {
                 <div className='div-1'>
                     {/* <AgentProfileForm></AgentProfileForm>
                     <div className='profile-img'>Profile Picture</div> */}
-                    <CreateAgentForm></CreateAgentForm>
+                    <CreateAgentForm />
                 </div>
             </div>
         </div>

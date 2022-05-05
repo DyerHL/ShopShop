@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { SignupAgent } from '../Data/AuthAgents';
 
 const initialState = {
     email: '',
@@ -26,7 +25,7 @@ export default function CreateAgentForm() {
         e.preventDefault();
 
         console.warn( 'submited', {...formInput});
-        SignupAgent({ ...formInput});
+        //SignInUser({ ...formInput});
         resetForm();
     }
     
