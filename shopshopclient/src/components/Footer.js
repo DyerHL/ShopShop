@@ -9,7 +9,7 @@ export default function Footer() {
           Agent Login
         </Link>
         <Link className="navbar-brand navbar-logo" to="/about">
-                <img src={ShopShopLogo} alt='logo' style={{ width: '100px' }}/>
+                <img className="footer-logo" src={ShopShopLogo} alt='logo' />
         </Link>
         <footer className="footer-contact-info">
           <p className="footer-email">info@shopshop.com</p>

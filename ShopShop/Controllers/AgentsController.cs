@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FirebaseAdmin.Auth;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopShop.DataAccess;
 using ShopShop.Models;
@@ -84,6 +86,30 @@ namespace ShopShop.Controllers
             {
                 return BadRequest(agent);
             }
+        }
+
+        [Authorize]
+        [HttpGet("Auth")]
+        public async Task<IActionResult> GetAgentAuthStatus()
+        {
+            //var token = authorization.substring(6);
+            //FirebaseToken decoded = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
+            //var uid = decoded.Uid;
+            //var uid = user.findfirst(claim => claim.type == "user_id").value;
+            string uid = User.FindFirst(claim => claim.Type == "user_id").Value;
+            bool agentexists = _agentRepo.AgentExists(uid);
+            if (!agentexists)
+            {
+                Agent agentfromtoken = new Agent()
+                {
+                    Name = User.Identity.Name,
+                    Uid = uid,
+                };
+
+                _agentRepo.AddAgent(agentfromtoken);
+                return Ok();
+            }
+            return Ok();
         }
     }
 }
