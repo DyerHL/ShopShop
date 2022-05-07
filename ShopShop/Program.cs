@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                        policy =>
                        {
-                           policy.WithOrigins("https://local.host:7045", "https://local.host:3000").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                           policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                        });
 });
 builder.Services.AddControllers();
@@ -28,7 +28,7 @@ var FirebaseSDKPath = builder.Configuration["FirebaseSDKPath"];
 //Firebase Authentication
 FirebaseApp.Create(new AppOptions()
 {
-    Credential = GoogleCredential.FromFile("C:/Users/halie/source/repos/ShopShop/FirebaseSDXKey.json") 
+    Credential = GoogleCredential.FromFile("C:/Users/Thor/source/repos/ShopShop/FirebaseSDXKey.json") 
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

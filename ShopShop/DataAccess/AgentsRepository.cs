@@ -190,7 +190,7 @@ namespace ShopShop.DataAccess
 
                     cmd.Parameters.AddWithValue("@uid", uid);
 
-                    SqlDataReader reader = (SqlDataReader)cmd.ExecuteScalar();
+                    SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.Read())
                     {

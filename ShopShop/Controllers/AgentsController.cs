@@ -1,4 +1,5 @@
 ﻿using FirebaseAdmin.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShopShop.DataAccess;
@@ -87,20 +88,21 @@ namespace ShopShop.Controllers
             }
         }
 
-        //[Authorize]
-        [HttpGet("/Auth")]
-        public async Task<IActionResult> GetAgentAuthStatus([FromHeader] string idToken)
+        [Authorize]
+        [HttpGet("Auth")]
+        public async Task<IActionResult> GetAgentAuthStatus()
         {
             //var token = authorization.substring(6);
-            FirebaseToken decoded = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
-            var uid = decoded.Uid;
+            //FirebaseToken decoded = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(idToken);
+            //var uid = decoded.Uid;
             //var uid = user.findfirst(claim => claim.type == "user_id").value;
+            string uid = User.FindFirst(claim => claim.Type == "user_id").Value;
             bool agentexists = _agentRepo.AgentExists(uid);
             if (!agentexists)
             {
                 Agent agentfromtoken = new Agent()
                 {
-                    Name = (string)decoded.Claims.GetValueOrDefault("name"),
+                    Name = User.Identity.Name,
                     Uid = uid,
                 };
 

@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 import React, { useState, useRef } from 'react';
-import { SignupAgent } from '../Data/AuthAgents';
-=======
-import React, { useState } from 'react';
->>>>>>> 0bba2fe39012867673a04dc378e9a01dcb9facc5
 
 const initialState = {
     email: '',

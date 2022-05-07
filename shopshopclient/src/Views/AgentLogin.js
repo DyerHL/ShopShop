@@ -12,13 +12,15 @@ export default function AgentLogin() {
       </div>
       <div className='div-body'>
         <div className='div-1 form-div'>
-            <div className='login-title'>Login</div>
-            <div className='login-form'>Login Form
-              <div className='login-button btn' onClick={signInUser}>Login</div>
+            {/* <div className='login-title'>Login</div>
+            <div className='login-form'>Login Form */}
+              <div>
+                <button className='login-button btn btn-info' onClick={signInUser}>Login</button>
+              </div>
               <Link className='create-account-button' to="/createAgent">
                 <div>Create Account</div>
               </Link>
-            </div>
+            {/* </div> */}
         </div>
       </div>
     </div>
