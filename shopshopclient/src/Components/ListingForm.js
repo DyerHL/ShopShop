@@ -1,17 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from "prop-types";
+import { createListing } from '../Data/ListingsData';
 
 const initialState = {
+    id: '',
     address: '',
     squareFoot: '',
     rent: '',
     city: '',
     yearBuilt: '',
     description: '',
+    imageUrl: '',
     agent: '',
 }
 
-export default function ListingForm() {
+export default function ListingForm(listing = {}) {
     const [formInput, setFormInput] = useState(initialState);
+    let navigation = useNavigate();
 
     useEffect(() => {
         if(listing.id){
@@ -38,7 +44,7 @@ export default function ListingForm() {
         
         const handleSubmit = (e) => {
             e.preventDefault();
-            console.warn(formInput);
+            createListing(formInput).then(navigation('/listings', { replace: true }))
         }
 
   return (
@@ -75,3 +81,8 @@ export default function ListingForm() {
     </form>
   )
 }
+
+ListingForm.Proptype = {
+    listing: PropTypes.shape(PropTypes.obj).isRequired,
+    setListings: PropTypes.func.isRequired
+  }
