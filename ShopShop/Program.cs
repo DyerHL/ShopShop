@@ -28,7 +28,7 @@ var FirebaseSDKPath = builder.Configuration["FirebaseSDKPath"];
 //Firebase Authentication
 FirebaseApp.Create(new AppOptions()
 {
-    Credential = GoogleCredential.FromFile("C:/Users/Thor/source/repos/ShopShop/FirebaseSDXKey.json") 
+    Credential = GoogleCredential.FromFile(FirebaseSDKPath)
 });
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
