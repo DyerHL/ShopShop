@@ -1,15 +1,13 @@
 
 import axios from 'axios';
 import { getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
-import { auth, firebaseConfig } from './APIKeys';
+import { auth } from './APIKeys';
 
 const baseUrl = "https://localhost:7045/api"
 ;
 
 const agentExisitsinDB = () => {
     const idToken = sessionStorage.getItem("token");
-    console.warn("API Storage", sessionStorage);
-    console.warn("API Token", idToken);
     axios.get(`${baseUrl}/Agents/Auth`, { headers: { Authorization: "Bearer " + idToken, idToken: idToken}});
 };
 

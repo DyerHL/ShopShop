@@ -38,8 +38,7 @@ namespace ShopShop.DataAccess
                                       YearBuilt,
                                       City,
                                       ImgUrl,
-                                      AgentId,
-                                      UserId
+                                      AgentId
                                       FROM Listing
                                       ";
 
@@ -59,7 +58,6 @@ namespace ShopShop.DataAccess
                             City = reader.GetString(reader.GetOrdinal("City")),
                             ImgUrl = reader.GetString(reader.GetOrdinal("ImgUrl")),
                             AgentId = reader.GetInt32(reader.GetOrdinal("AgentId")),
-                            UserId = reader.GetInt32(reader.GetOrdinal("UserId"))
                         };
 
                         listings.Add(listing);
@@ -89,8 +87,7 @@ namespace ShopShop.DataAccess
                                       YearBuilt,
                                       City,
                                       ImgUrl,
-                                      AgentId,
-                                      UserId
+                                      AgentId
                                       FROM Listing WHERE Id = @id
                                       ";
 
@@ -111,7 +108,6 @@ namespace ShopShop.DataAccess
                             City = reader.GetString(reader.GetOrdinal("City")),
                             ImgUrl = reader.GetString(reader.GetOrdinal("ImgUrl")),
                             AgentId = reader.GetInt32(reader.GetOrdinal("AgentId")),
-                            UserId = reader.GetInt32(reader.GetOrdinal("UserId"))
                         };
 
                         reader.Close();
@@ -144,7 +140,6 @@ namespace ShopShop.DataAccess
                                       City,
                                       ImgUrl,
                                       AgentId,
-                                      UserId
                                       FROM Listing WHERE AgentId = @id
                                       ";
 
@@ -166,7 +161,6 @@ namespace ShopShop.DataAccess
                             City = reader.GetString(reader.GetOrdinal("City")),
                             ImgUrl = reader.GetString(reader.GetOrdinal("ImgUrl")),
                             AgentId = reader.GetInt32(reader.GetOrdinal("AgentId")),
-                            UserId = reader.GetInt32(reader.GetOrdinal("UserId"))
                         };
                         listings.Add(listing);
 
@@ -192,8 +186,7 @@ namespace ShopShop.DataAccess
                                                 YearBuilt,
                                                 City,
                                                 ImgUrl,
-                                                AgentId,
-                                                UserId)
+                                                AgentId,)
                     OUTPUT Inserted.Id
                     VALUES (@address, @squareFoot, @rent, @details, @year, @city, @imgurl, @agentId, @userId)";
 
@@ -205,7 +198,6 @@ namespace ShopShop.DataAccess
                     cmd.Parameters.AddWithValue("@city", listing.City);
                     cmd.Parameters.AddWithValue("@imgurl", listing.ImgUrl);
                     cmd.Parameters.AddWithValue("@agentId", listing.AgentId);
-                    cmd.Parameters.AddWithValue("@userId", listing.UserId);
 
                     int id = (int)cmd.ExecuteScalar();
 
