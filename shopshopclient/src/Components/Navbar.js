@@ -5,7 +5,7 @@ import 'bootstrap/js/src/collapse';
 import ShopShopLogo from '../Assets/ShopShopLogo.png';
 
 
-export default function Navbar() {
+export default function Navbar({ agent }) {
     return (
         <nav className="navbar navbar-expand navbar-light justify-content-center fixed-top bg-white">
             <Link className="navbar-brand navbar-logo" to="/about">
@@ -44,6 +44,19 @@ export default function Navbar() {
                             CONTACT
                         </Link>
                     </li>
+                    {agent ? (
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/agentHome/:key">
+                                AGENT HOME
+                            </Link>
+                        </li>
+                    ) : (
+                        <li className="nav-item hidden-link">
+                            <Link className="nav-link"to="/">
+                              SECRET LINK
+                            </Link>
+                        </li>
+                    )}
                 </ul>
             </div>
         </nav>

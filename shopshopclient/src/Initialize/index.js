@@ -28,7 +28,7 @@ function Initialize() {
   
   return (
     <div>
-        <Navbar />
+        <Navbar agent={agent}/>
         <Routing agent={agent} />
         <Footer agent={agent}/>
     </div>

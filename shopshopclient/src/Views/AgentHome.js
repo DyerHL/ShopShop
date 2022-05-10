@@ -8,7 +8,7 @@ export default function AgentHome() {
     <div className='body body-div  agent-home-body'>
         <div className='img'></div>
         <div className="title">
-          Agent Login
+          Agent Home
           <hr className="hr" />
         </div>
         <div className='div-body'>
