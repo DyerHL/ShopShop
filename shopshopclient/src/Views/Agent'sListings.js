@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import ListingCard from '../Components/ListingCard.js';
+import AgentListingCard from '../Components/AgentsListingCard.js';
 import nashSkyline from '../Assets/nashSkyline.jpg';
 import { getListingsById } from '../Data/ListingsData.js';
 import { useParams } from 'react-router-dom';
@@ -29,7 +29,7 @@ export default function AgentsListingsView() {
                 <div className="div-body">
                     <div className="cards">
                         {listings.map((card) => (
-                            <ListingCard setListings={setListings} card={card} />
+                            <AgentListingCard setListings={setListings} card={card} key={card.id} />
                         ))}
                     </div>
                 </div>

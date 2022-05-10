@@ -139,8 +139,7 @@ namespace ShopShop.DataAccess
                                       YearBuilt,
                                       City,
                                       ImgUrl,
-                                      AgentId,
-                                      UserId
+                                      AgentId
                                       FROM Listing WHERE AgentId = @id
                                       ";
 

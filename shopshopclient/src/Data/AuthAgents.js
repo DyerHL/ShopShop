@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import { getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
-import { auth, firebaseConfig } from './APIKeys';
+import { auth } from './APIKeys';
 
 const baseUrl = "https://localhost:7045/api"
 ;
