@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import About from '../Views/About';
 import ListingsView from '../Views/ListingsView';
 import SingleListingView from '../Views/SingleListingView';
@@ -13,7 +13,16 @@ import AgentHome from '../Views/AgentHome';
 import EditListingView from '../Views/EditListing';
 import CreateListing from '../Views/CreateListing';
 
-export default function Routing(agent) {
+export default function Routing({ agent }) {
+
+    // const ProtectedRoute = ({ user, children }) => {
+    //     if (!user) {
+    //       return <Navigate to="/" />;
+    //     }
+      
+    //     return children;
+    //   };
+
     return (
         <>
             <Routes>
@@ -27,6 +36,15 @@ export default function Routing(agent) {
                 <Route path="/createAgent" element={<CreateAgent />} />
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
                 <Route path="/agentHome/:key" element={<AgentHome />} />
+
+                {/* <Route 
+                path="/agentHome/:key" 
+                element={
+                    <ProtectedRoute agent={agent}>
+                        <AgentHome />
+                    </ProtectedRoute>
+                }
+                /> */}
                 <Route path="/agentProfile/:key" element={<AgentProfile />} />
                 <Route path="/agentsListings" element={<AgentsListingsView />} />
                 <Route path="/editListing" element={<EditListingView />} />
