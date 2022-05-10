@@ -11,6 +11,5 @@
         public string City { get; set; }
         public string ImgUrl { get; set; }
         public int AgentId { get; set; }
-        public int UserId { get; set; }
     }
 }

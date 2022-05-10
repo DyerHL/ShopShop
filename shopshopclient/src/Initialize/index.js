@@ -19,7 +19,6 @@ function Initialize() {
         setAgent(agentInfoObj);
         sessionStorage.setItem("token", authed.accessToken)
         agentExisitsinDB(authed.accessToken);
-        console.warn("Index Auth", authed.accessToken);
       } else if (agent || agent == null) {
         setAgent(false);
       }
@@ -30,7 +29,7 @@ function Initialize() {
     <div>
         <Navbar />
         <Routing agent={agent} />
-        <Footer />
+        <Footer agent={agent}/>
     </div>
   );
 }
