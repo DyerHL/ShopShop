@@ -139,11 +139,7 @@ namespace ShopShop.DataAccess
                                       YearBuilt,
                                       City,
                                       ImgUrl,
-<<<<<<< HEAD
-                                      AgentId
-=======
-                                      AgentId,
->>>>>>> master
+                                      AgentId)
                                       FROM Listing WHERE AgentId = @id
                                       ";
 
@@ -190,11 +186,7 @@ namespace ShopShop.DataAccess
                                                 YearBuilt,
                                                 City,
                                                 ImgUrl,
-<<<<<<< HEAD
                                                 AgentId)
-=======
-                                                AgentId,)
->>>>>>> master
                     OUTPUT Inserted.Id
                     VALUES (@address, @squareFoot, @rent, @details, @year, @city, @imgurl, @agentId)";
 

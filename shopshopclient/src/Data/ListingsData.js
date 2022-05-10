@@ -20,9 +20,8 @@ const getListingsById = (id) =>
 
 const createListing = (listingObj) => 
  new Promise((resolve, reject) => {
-   console.warn(listingObj);
    axios
-    .post(`${baseUrl}/Listings`, listingObj)
+    .post(`${baseUrl}/listings`, listingObj)
     .then((response) => resolve(response.data))
     .catch(reject);
  })
