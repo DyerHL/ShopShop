@@ -13,7 +13,7 @@ import AgentHome from '../Views/AgentHome';
 import EditListingView from '../Views/EditListing';
 import CreateListing from '../Views/CreateListing';
 
-export default function Routing(agent) {
+export default function Routing({agent}) {
     return (
         <>
             <Routes>
@@ -23,7 +23,7 @@ export default function Routing(agent) {
                 <Route path="/listings" element={<ListingsView />} />
                 <Route path="/listings/:id" element={<SingleListingView />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/agentLogin" element={<AgentLogin />} />
+                <Route path="/agentLogin" element={<AgentLogin agent={agent}/>} />
                 <Route path="/createAgent" element={<CreateAgent />} />
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
                 <Route path="/agentHome/:key" element={<AgentHome />} />

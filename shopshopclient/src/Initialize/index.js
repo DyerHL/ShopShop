@@ -12,11 +12,12 @@ function Initialize() {
     auth.onAuthStateChanged((authed) => {
       if(authed) {
         const agentInfoObj = {
-          Name: authed.Name,
+          Name: authed.name,
           uid: authed.uid,
           accessToken: authed.accessToken,
         };
         setAgent(agentInfoObj);
+        console.warn(agentInfoObj);
         sessionStorage.setItem("token", authed.accessToken)
         agentExisitsinDB(authed.accessToken);
       } else if (agent || agent == null) {
@@ -29,7 +30,7 @@ function Initialize() {
     <div>
         <Navbar />
         <Routing agent={agent} />
-        <Footer />
+        <Footer agent={agent}/>
     </div>
   );
 }

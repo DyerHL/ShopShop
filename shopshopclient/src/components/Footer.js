@@ -1,13 +1,28 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import ShopShopLogo from '../Assets/ShopShopLogo.png';
+import { signOutUser } from "../Data/AuthAgents";
 
-export default function Footer() {
+export default function Footer({ agent }) {
   return (
       <div id="footerDiv" className="footer-nav">
-        <Link className="nav-link" to="/agentLogin">
-          Agent Login
-        </Link>
+
+        {agent ? (
+          <li className="nav-link">
+            <Link className="nav-link" to="/agentHome/:key">Agent Home</Link>
+            <button 
+              onClick={signOutUser}
+              type="button"
+              className="btn btn-warning footer-btn">
+                Sign Out
+            </button>
+          </li>
+        ) : (
+          <Link className="nav-link" to="/agentLogin">
+            Agent Login
+          </Link>
+            )}
+
         <Link className="navbar-brand navbar-logo" to="/about">
                 <img className="footer-logo" src={ShopShopLogo} alt='logo' />
         </Link>
