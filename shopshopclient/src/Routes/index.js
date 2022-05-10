@@ -28,7 +28,7 @@ export default function Routing(agent) {
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
                 <Route path="/agentHome/:key" element={<AgentHome />} />
                 <Route path="/agentProfile/:key" element={<AgentProfile />} />
-                <Route path="/agentsListings" element={<AgentsListingsView />} />
+                <Route path="/agentsListings/:key" element={<AgentsListingsView />} />
                 <Route path="/editListing" element={<EditListingView />} />
                 <Route path="/postNewListing" element={<CreateListing />} />
             </Routes>
