@@ -170,5 +170,39 @@ namespace ShopShop.DataAccess
                 }
             }
         }
+
+        //Agent Exists?
+        public bool AgentExists(string uid)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"       SELECT Id,
+	                                           [Name],
+	                                           Phone,
+	                                           Email, 
+	                                           ImgURL,
+                                               UID
+                                        FROM Agent
+										WHERE UID = @uid";
+
+                    cmd.Parameters.AddWithValue("@uid", uid);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

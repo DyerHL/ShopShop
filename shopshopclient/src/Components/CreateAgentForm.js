@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { SignupAgent } from '../Data/AuthAgents';
+import React, { useState, useRef } from 'react';
 
 const initialState = {
     email: '',
@@ -8,6 +7,9 @@ const initialState = {
 
 export default function CreateAgentForm() {
     const [formInput, setFormInput] = useState(initialState);
+
+    const emailRef = useRef();
+    const passwordRef = useRef();
 
     const resetForm = () => {
         setFormInput(initialState);
@@ -26,19 +28,19 @@ export default function CreateAgentForm() {
         e.preventDefault();
 
         console.warn( 'submited', {...formInput});
-        SignupAgent({ ...formInput});
+        //SignInUser({ ...formInput});
         resetForm();
     }
     
   return (
-    <form onSubmit={handleSubmit}>
-        <label htmlFor='username'>
+    <form className='form-body' onSubmit={handleSubmit}>
+        <label className='form-label' htmlFor='username'>
             Username:
-            <input type='text' id='email' name='email' required value={formInput.email || ''} onChange={handleChange} />
+            <input type='email' ref={emailRef}  className='form-input' name='email' required value={formInput.email || ''} onChange={handleChange} />
         </label>
-        <label htmlFor='password'>
+        <label className='form-label' htmlFor='password'>
             Password:
-            <input type='text' id='password' name='password' required value={formInput.password || ''} onChange={handleChange} />
+            <input type='password' ref={passwordRef} className='form-input' name='password' required value={formInput.password || ''} onChange={handleChange} />
         </label>
         <button type="submit" className ='btn btn-info form-btn'>
             Submit Cred

@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from './Data/APIKeys';
 import './App.scss';
 import reportWebVitals from './reportWebVitals';
 import Initialize from './Initialize';
 import 'bootstrap/dist/css/bootstrap.css';
 
-initializeApp(firebaseConfig);
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <Router>

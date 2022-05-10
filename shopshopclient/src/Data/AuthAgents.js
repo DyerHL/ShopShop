@@ -1,39 +1,29 @@
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from './APIKeys';
-import { 
-    getAuth,
-    createUserWithEmailAndPassword,
- } from 'firebase/auth';
 
-initializeApp(firebaseConfig);
+import axios from 'axios';
+import { getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
+import { auth } from './APIKeys';
 
-const auth = getAuth();
+const baseUrl = "https://localhost:7045/api"
+;
 
-const SignupAgent = (formInput) => {
-    console.warn('SA' , {...formInput})
-   const email = formInput.email.value;
-   const password = formInput.password.value;
+const agentExisitsinDB = () => {
+    const idToken = sessionStorage.getItem("token");
+    axios.get(`${baseUrl}/Agents/Auth`, { headers: { Authorization: "Bearer " + idToken, idToken: idToken}});
+};
 
-   createUserWithEmailAndPassword(auth, email, password)
-    .then(cred => {
-        console.warn('USER CREATED', cred.user)
-    })
-    .catch(err => {
-        console.warn('AGENT CREATEION ERROR', err.message)
-    })
+const signInUser = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider);
+    //console.log(auth.currentUser.uid);
+  };
 
-}
-
-
-// const signInUser = () => {
-//     const provider = new firebase.auth.GoogleAuthProvider();
-//     firebase.auth().signInWithPopup(provider);
-//   };
-//   const signOutUser = () => new Promise((resolve, reject) => {
-//     firebase.auth().signOut().then(resolve).catch(reject);
-//   });
+  const signOutUser = () =>
+  new Promise((resolve, reject) => {
+    getAuth().signOut().then(resolve).catch(reject);
+  });
+  
   export { 
-    // signInUser, 
-    // signOutUser, 
-    SignupAgent 
+    agentExisitsinDB,
+    signInUser, 
+    signOutUser
 };

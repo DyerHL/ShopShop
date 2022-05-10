@@ -1,3 +1,7 @@
+using FirebaseAdmin;
+using Google.Apis.Auth.OAuth2;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using ShopShop.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                        policy =>
                        {
-                           policy.WithOrigins("https://local.host:7045", "https://local.host:3000").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                           policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                        });
 });
 builder.Services.AddControllers();
@@ -19,6 +23,26 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IAgentsRepository, AgentsRepository>();
 builder.Services.AddTransient<IListingRepository, ListingsRepository>();
+var FirebaseSDKPath = builder.Configuration["FirebaseSDKPath"];
+
+//Firebase Authentication
+FirebaseApp.Create(new AppOptions()
+{
+    Credential = GoogleCredential.FromFile(FirebaseSDKPath)
+});
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+{
+    options.Authority = "https://securetoken.google.com/shop-shop-45841";
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = "https://securetoken.google.com/shop-shop-45841",
+        ValidateAudience = true,
+        ValidAudience = "shop-shop-45841",
+        ValidateLifetime = true
+    };
+});
 
 var app = builder.Build();
 
@@ -32,6 +56,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors( builder => { builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); });
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
