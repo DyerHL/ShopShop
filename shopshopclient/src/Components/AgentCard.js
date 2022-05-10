@@ -5,7 +5,7 @@ export default function AgentCard({card}) {
     return (
         <div className="agent-card">
             <div className="img-position">
-                <img src='https://sbcf.fr/wp-content/uploads/2018/03/sbcf-default-avatar.png' className="img" />
+                <img src={card.imgURL} className="img" />
             </div>
             <div className="agent-card-body">
                 <div className="item">{card.name}</div>

@@ -9,6 +9,7 @@ export default function Footer({ agent }) {
 
         {agent ? (
           <li className="nav-link">
+            <Link className="nav-link" to="/agentHome/:key">Agent Home</Link>
             <button 
               onClick={signOutUser}
               type="button"

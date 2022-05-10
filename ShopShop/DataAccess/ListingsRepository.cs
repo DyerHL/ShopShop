@@ -188,7 +188,7 @@ namespace ShopShop.DataAccess
                                                 ImgUrl,
                                                 AgentId,)
                     OUTPUT Inserted.Id
-                    VALUES (@address, @squareFoot, @rent, @details, @year, @city, @imgurl, @agentId, @userId)";
+                    VALUES (@address, @squareFoot, @rent, @details, @year, @city, @imgurl, @agentId)";
 
                     cmd.Parameters.AddWithValue("@address", listing.Address);
                     cmd.Parameters.AddWithValue("@squareFoot", listing.SquareFoot);
