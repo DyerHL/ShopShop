@@ -14,7 +14,7 @@ const getListingsById = (id) =>
   new Promise((resolve, reject) => {
     axios
       .get(`${baseUrl}/listings/listings/${id}`)
-      .then((response) => resolve(response.data))
+      .then((response) => resolve(Object.values(response.data)))
       .catch(reject);
   });
 
