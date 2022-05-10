@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { createListing } from '../Data/ListingsData';
 
 const initialState = {
-    id: '',
     address: '',
     squareFoot: '',
     rent: '',
@@ -29,6 +28,7 @@ export default function ListingForm(listing = {}) {
                 city: listing.city,
                 yearBuilt: listing.yearBuilt,
                 description: listing.description,
+                imageUrl: listing.imageUrl,
                 agent: listing.agent
             });
         }
@@ -72,6 +72,10 @@ export default function ListingForm(listing = {}) {
         <label htmlFor="description">
             Description:
             <input type="text" id="description" value={formInput.description || ""} onChange={handleChange}/>
+        </label>
+        <label htmlFor="imageUrl">
+            ImageUrl:
+            <input type="text" id="imageUrl" value={formInput.imageUrl || ""} onChange={handleChange}/>
         </label>
         <label htmlFor="agent">
             Agent:
