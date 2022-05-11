@@ -45,6 +45,10 @@
   }
 }
 
+.hidden-link {
+  display: none;
+}
+
 .body {
   min-height: 100%;
   display: flex;
@@ -148,4 +152,11 @@
   .form-input {
     margin-left: .2rem;
   }
+}
+
+.agent-link-div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3em;
 }

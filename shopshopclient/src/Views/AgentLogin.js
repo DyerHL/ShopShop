@@ -20,8 +20,6 @@ export default function AgentLogin({agent}) {
       </div>
       <div className='div-body'>
         <div className='div-1 form-div'>
-            {/* <div className='login-title'>Login</div>
-            <div className='login-form'>Login Form */}
               <div>
                 <button className='login-button btn btn-info' onClick={(e) => handleClick(e)}>Login</button>
               </div>

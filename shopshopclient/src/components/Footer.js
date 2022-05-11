@@ -6,10 +6,8 @@ import { signOutUser } from "../Data/AuthAgents";
 export default function Footer({ agent }) {
   return (
       <div id="footerDiv" className="footer-nav">
-
         {agent ? (
           <li className="nav-link">
-            <Link className="nav-link" to="/agentHome/:key">Agent Home</Link>
             <button 
               onClick={signOutUser}
               type="button"
@@ -22,7 +20,6 @@ export default function Footer({ agent }) {
             Agent Login
           </Link>
             )}
-
         <Link className="navbar-brand navbar-logo" to="/about">
                 <img className="footer-logo" src={ShopShopLogo} alt='logo' />
         </Link>
