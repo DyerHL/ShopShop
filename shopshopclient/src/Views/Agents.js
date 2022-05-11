@@ -1,4 +1,3 @@
-import React from "react";
 import AgentCard from "../Components/AgentCard";
 import { getAllAgents } from "../Data/AgentsData";
 import { useEffect, useState } from "react";

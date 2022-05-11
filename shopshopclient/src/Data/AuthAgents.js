@@ -14,7 +14,6 @@ const agentExisitsinDB = () => {
 const signInUser = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
-    //console.log(auth.currentUser.uid);
   };
 
   const signOutUser = () =>
