@@ -5,10 +5,10 @@ import { createListing } from '../Data/ListingsData';
 
 const initialState = {
     address: '',
-    squareFoot: '',
-    rent: '',
+    squareFoot: 0,
+    rent: 0,
     city: '',
-    yearBuilt: '',
+    yearBuilt: 0,
     description: '',
     imageUrl: '',
     agent: '',
@@ -23,13 +23,13 @@ export default function ListingForm(listing = {}) {
 
             setFormInput({
                 address: listing.address,
-                squareFoot: listing.squareFoot,
-                rent: listing.rent,
+                squareFoot: Number(listing.squareFoot),
+                rent: Number(listing.rent),
                 city: listing.city,
-                yearBuilt: listing.yearBuilt,
+                yearBuilt: Number(listing.yearBuilt),
                 description: listing.description,
                 imageUrl: listing.imageUrl,
-                agent: listing.agent
+                agentId: Number(listing.agentId)
             });
         }
       }, [listing]);
@@ -44,7 +44,19 @@ export default function ListingForm(listing = {}) {
         
         const handleSubmit = (e) => {
             e.preventDefault();
-            createListing(formInput).then(navigation('/listings', { replace: true }))
+            console.warn(formInput);
+            const newObject = {
+                address: formInput.address,
+                squareFoot: Number(formInput.squareFoot),
+                rent: Number(formInput.rent),
+                city: formInput.city,
+                yearBuilt: Number(formInput.yearBuilt),
+                Details: formInput.description,
+                ImgUrl: formInput.imageUrl,
+                agentId: Number(formInput.agentId)
+            }
+            console.warn(newObject);
+            createListing(newObject).then(navigation('/listings', { replace: true }))
         }
 
   return (
@@ -55,11 +67,11 @@ export default function ListingForm(listing = {}) {
         </label>
         <label className='form-label' htmlFor="squareFoot">
             Square Foot:
-            <input type="text" id="squareFoot" className='form-input' value={formInput.squareFoot || ""} onChange={handleChange}/>
+            <input type="number" id="squareFoot" className='form-input' value={Number(formInput.squareFoot) || ""} onChange={handleChange}/>
         </label>
         <label className='form-label' htmlFor="rent">
             Rent:
-            <input type="text" id="rent" className='form-input' value={formInput.rent || ""} onChange={handleChange}/>
+            <input type="number" id="rent" className='form-input' value={formInput.rent || ""} onChange={handleChange}/>
         </label>
         <label className='form-label' htmlFor="city">
             City:
@@ -67,7 +79,7 @@ export default function ListingForm(listing = {}) {
         </label>
         <label className='form-label' htmlFor="yearBuilt">
             Year Built:
-            <input type="text" id="yearBuilt" className='form-input' value={formInput.yearBuilt || ""} onChange={handleChange}/>
+            <input type="number" id="yearBuilt" className='form-input' min="1900" max="2022" value={formInput.yearBuilt || ""} onChange={handleChange}/>
         </label>
         <label className='form-label' htmlFor="description">
             Description:
@@ -77,9 +89,9 @@ export default function ListingForm(listing = {}) {
             ImageUrl:
             <input type="text" id="imageUrl" value={formInput.imageUrl || ""} onChange={handleChange}/>
         </label>
-        <label className='form-label' htmlFor="agent">
+        <label className='form-label' htmlFor="agentId">
             Agent:
-            <input type="text" id="agent" className='form-input' value={formInput.agent || ""} onChange={handleChange}/>
+            <input type="number" id="agentId" className='form-input' value={formInput.agentId || ""} onChange={handleChange}/>
         </label>
         <input type="submit" value="Submit" />
     </form>
