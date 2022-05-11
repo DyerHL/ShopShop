@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import PropTypes from "prop-types";
 import About from '../Views/About';
 import ListingsView from '../Views/ListingsView';
 import SingleListingView from '../Views/SingleListingView';
@@ -14,7 +15,6 @@ import EditListingView from '../Views/EditListing';
 import CreateListing from '../Views/CreateListing';
 
 export default function Routing({ agent }) {
-    console.warn(`ROUTING: ${JSON.stringify(agent)}`);
     return (
         <>
             <Routes>
@@ -27,7 +27,7 @@ export default function Routing({ agent }) {
                 <Route path="/agentLogin" element={<AgentLogin />} />
                 <Route path="/createAgent" element={<CreateAgent />} />
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
-                <Route path="/agentHome/:key" element={<AgentHome />} />
+                <Route path="/agentHome/:key" element={<AgentHome agent={agent} />} />
 
                 {/* <Route 
                 path="/agentHome/:key" 
