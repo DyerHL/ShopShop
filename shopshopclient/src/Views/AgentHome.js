@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getAgentById } from '../Data/AgentsData';
 
-export default function AgentHome() {
+export default function AgentHome({agent}) {
 
   return (
     <div className='body body-div  agent-home-body'>

@@ -14,6 +14,7 @@ import EditListingView from '../Views/EditListing';
 import CreateListing from '../Views/CreateListing';
 
 export default function Routing({agent}) {
+    console.warn("routing", agent);
     return (
         <>
             <Routes>
@@ -23,23 +24,14 @@ export default function Routing({agent}) {
                 <Route path="/listings" element={<ListingsView />} />
                 <Route path="/listings/:id" element={<SingleListingView />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/agentLogin" element={<AgentLogin agent={agent}/>} />
+                <Route path="/agentLogin" element={<AgentLogin />} />
                 <Route path="/createAgent" element={<CreateAgent />} />
                 {/* Agent Routes  Moving to AgentRoutes.js*/}
-                <Route path="/agentHome/:key" element={<AgentHome />} />
-
-                {/* <Route 
-                path="/agentHome/:key" 
-                element={
-                    <ProtectedRoute agent={agent}>
-                        <AgentHome />
-                    </ProtectedRoute>
-                }
-                /> */}
-                <Route path="/agentProfile/:key" element={<AgentProfile />} />
-                <Route path="/agentsListings/:key" element={<AgentsListingsView />} />
-                <Route path="/editListing" element={<EditListingView />} />
-                <Route path="/postNewListing" element={<CreateListing />} />
+                <Route path="/agentHome/:key" element={agent ? <AgentHome  /> : <AgentLogin />} />
+                <Route path="/agentProfile/:key" element={agent ? <AgentProfile  /> : <AgentLogin />} />
+                <Route path="/agentsListings/:key" element={agent ? <AgentsListingsView  /> : <AgentLogin />} />
+                <Route path="/editListing" element={agent ? <EditListingView  /> : <AgentLogin />} />
+                <Route path="/postNewListing" element={agent ? <CreateListing  /> : <AgentLogin />} />
             </Routes>
         </>
     )

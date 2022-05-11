@@ -15,11 +15,11 @@ export default function Footer({ agent }) {
                 Sign Out
             </button>
           </li>
-        ) : (
+          ) : (
           <Link className="nav-link" to="/agentLogin">
             Agent Login
           </Link>
-            )}
+        )}
         <Link className="navbar-brand navbar-logo" to="/about">
                 <img className="footer-logo" src={ShopShopLogo} alt='logo' />
         </Link>

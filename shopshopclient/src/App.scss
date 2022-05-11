@@ -149,6 +149,21 @@
 .form-body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.125rem;
+  color: #333;
+  font-family: 'inter';
+  label {
+    margin-bottom: 1rem;
+    display: block;
+    width: max-content;
+  }
+
+
+  // min-height: 100vh;
   .form-input {
     margin-left: .2rem;
   }

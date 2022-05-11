@@ -17,9 +17,10 @@ function Initialize() {
           accessToken: authed.accessToken,
         };
         setAgent(agentInfoObj);
-        console.warn(agentInfoObj);
+        console.warn("init", agentInfoObj);
         sessionStorage.setItem("token", authed.accessToken)
-        agentExisitsinDB(authed.accessToken);
+        // agentExisitsinDB(authed.accessToken);
+      // } else if (agent == null) {
       } else if (agent || agent == null) {
         setAgent(false);
       }
