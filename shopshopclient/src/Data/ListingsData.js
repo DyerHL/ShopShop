@@ -18,6 +18,14 @@ const getListingsById = (id) =>
       .catch(reject);
   });
 
+  const getListingsByAgentUid = (uid) =>
+  new Promise((resolve, reject) => {
+    axios
+      .get(`${baseUrl}/listings/listings/agent/${uid}`)
+      .then((response) => resolve(Object.values(response.data)))
+      .catch(reject);
+  });
+
 const deleteListing = (id) =>
   new Promise((resolve, reject) => {
     console.warn(baseUrl);
@@ -27,4 +35,4 @@ const deleteListing = (id) =>
       .catch(reject);
   });
 
-export { getListings, getListingsById, deleteListing };
+export { getListings, getListingsById, deleteListing, getListingsByAgentUid };

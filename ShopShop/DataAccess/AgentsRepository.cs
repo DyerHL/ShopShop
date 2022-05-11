@@ -97,6 +97,51 @@ namespace ShopShop.DataAccess
             }
         }
 
+        //Get an agent by Uid
+        public Agent GetAgentByUid(string uid)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"SELECT Id,
+	                                           [Name],
+	                                           Phone,
+	                                           Email, 
+	                                           ImgURL,
+                                               Uid 
+                                        FROM Agent
+										WHERE Uid = @uid";
+
+                    cmd.Parameters.AddWithValue("@uid", uid);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        Agent agent = new Agent()
+                        {
+                            Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            Name = reader.GetString(reader.GetOrdinal("Name")),
+                            Phone = reader.GetString(reader.GetOrdinal("Phone")),
+                            Email = reader.GetString(reader.GetOrdinal("Email")),
+                            ImgURL = reader.GetString(reader.GetOrdinal("ImgURL")),
+                            Uid = reader.GetString(reader.GetOrdinal("Uid"))
+                        };
+                        reader.Close();
+                        return agent;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        return null;
+                    }
+                }
+            }
+        }
+
+
         //Add an agent
 
         public void AddAgent(Agent agent)
