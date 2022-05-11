@@ -10,6 +10,8 @@ export default function AgentHome() {
     getAgentById(key).then(setAgent);
   },[]);
 
+
+
   return (
     <div className='body-div  agent-home-body'>
         <div className='page-title'>Agent Home</div>

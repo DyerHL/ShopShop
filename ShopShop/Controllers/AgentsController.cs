@@ -25,11 +25,11 @@ namespace ShopShop.Controllers
             return _agentRepo.GetAllAgents();
         }
 
-        // GET an agent by their Id
-        [HttpGet("Agents/{id}")]
-        public ActionResult GetAgentById(int id)
+        // GET an agent by their Uid
+        [HttpGet("Agents/{uid}")]
+        public ActionResult GetAgentByUid(string uid)
         {
-            Agent agent = _agentRepo.GetAgentById(id);
+            Agent agent = _agentRepo.GetAgentByUid(uid);
             if (agent == null)
             {
                 return NotFound();
@@ -109,7 +109,8 @@ namespace ShopShop.Controllers
                 _agentRepo.AddAgent(agentfromtoken);
                 return Ok();
             }
-            return Ok();
+            Agent existingAgent = _agentRepo.GetAgentByUid(uid);
+            return Ok(existingAgent);
         }
     }
 }

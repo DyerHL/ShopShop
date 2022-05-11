@@ -10,6 +10,7 @@ namespace ShopShop.DataAccess
         public void UpdateAgent(Agent agent);
         public void DeleteAgent(int agentId);
         public bool AgentExists(string uid);
+        Agent GetAgentByUid(string uid);
 
     }
 }

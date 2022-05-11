@@ -1,14 +1,17 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import PropTypes from "prop-types";
 import { signInUser } from '../Data/AuthAgents';
 
-export default function AgentLogin({agent}) {
+export default function AgentLogin() {
   const navigate = useNavigate();
+  //const url = `/agentHome/${agent.uid}`;
+  const uid = sessionStorage.getItem("uid")
+  
 
   const handleClick = (e) => {
     signInUser();
-    navigate(`/agentHome/1`);
-    console.warn(agent);
+    navigate(`/agentHome/${uid}`);
   }
   
   return (
@@ -33,4 +36,8 @@ export default function AgentLogin({agent}) {
       </div>
     </div>
   )
+}
+
+AgentLogin.Proptype = {
+  agent: PropTypes.shape(PropTypes.obj).isRequired
 }

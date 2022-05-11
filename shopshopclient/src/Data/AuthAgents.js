@@ -6,10 +6,12 @@ import { auth } from './APIKeys';
 const baseUrl = "https://localhost:7045/api"
 ;
 
-const agentExisitsinDB = () => {
+const agentExisitsinDB = () => new Promise((resolve, reject) => {
     const idToken = sessionStorage.getItem("token");
-    axios.get(`${baseUrl}/Agents/Auth`, { headers: { Authorization: "Bearer " + idToken, idToken: idToken}});
-};
+    axios.get(`${baseUrl}/Agents/Auth`, { headers: { Authorization: "Bearer " + idToken, idToken: idToken}})
+    .then(response => resolve((response)))
+    .catch(reject);
+});
 
 const signInUser = () => {
     const provider = new GoogleAuthProvider();
