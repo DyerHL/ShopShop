@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from "prop-types";
-import { createListing } from '../Data/ListingsData';
+import { createListing, getListings } from '../Data/ListingsData';
 
 const initialState = {
     address: '',
@@ -56,7 +56,7 @@ export default function ListingForm(listing = {}) {
                 agentId: Number(formInput.agentId)
             }
             console.warn(newObject);
-            createListing(newObject).then(navigation('/listings', { replace: true }))
+            createListing(newObject).then(getListings().then(navigation('/listings', { replace: true })))
         }
 
   return (
