@@ -58,6 +58,7 @@ namespace ShopShop.Controllers
             if(newListing == null)
             {
                 return NotFound();
+                Console.WriteLine("Upload Failed");
             }
             else
             {

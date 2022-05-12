@@ -18,6 +18,13 @@ const getListingsById = (id) =>
       .catch(reject);
   });
 
+const createListing = (listingObj) => 
+ new Promise((resolve, reject) => {
+   axios
+    .post(`${baseUrl}/listings`, listingObj)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+ })
   const getListingsByAgentUid = (uid) =>
   new Promise((resolve, reject) => {
     axios
@@ -35,4 +42,4 @@ const deleteListing = (id) =>
       .catch(reject);
   });
 
-export { getListings, getListingsById, deleteListing, getListingsByAgentUid };
+export { getListings, getListingsById, createListing, deleteListing, getListingsByAgentUid };
