@@ -20,7 +20,7 @@ export default function AgentHome({ agent }) {
             <div className='agent-link-div'>
             <Link className='link link-1' to={`/agentsListings/${uid}`}>View Current Listings</Link>
             <Link className='link link-2' to="/postNewListing">Create New Listing</Link>
-            <Link className='link link-3' to="/agentProfile/:key">Update Profile</Link>
+            <Link className='link link-3' to={`/agentProfile/${uid}`}>Update Profile</Link>
             </div>
         </div>
     </div>

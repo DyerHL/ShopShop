@@ -56,10 +56,10 @@ namespace ShopShop.Controllers
         }
 
         // PATCH an agent
-        [HttpPatch("Agents/{id}")]
-        public ActionResult EditAgent(int id, Agent updatedAgent)
+        [HttpPatch("Agents/{uid}")]
+        public ActionResult EditAgent(string uid, Agent updatedAgent)
         {
-            Agent agent = _agentRepo.GetAgentById(id);
+            Agent agent = _agentRepo.GetAgentByUid(uid);
 
             if (agent != null)
             {

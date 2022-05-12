@@ -1,34 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { updateAgent } from '../Data/AgentsData';
 
 const initialState = {
-    picture: '',
     name: '',
-    phone: '',
     email: '',
-    username: '',
-    password: '',
+    phone: '',
+    imgUrl: '',
 }
 
-export default function AgentProfileForm() {
+export default function CreateAgentForm({uid, editItem}) {
     const [formInput, setFormInput] = useState(initialState);
+    const navigation = useNavigate();
+
+    useEffect(() => {
+        setFormInput(editItem);
+    }, []);
+
+    const resetForm = () => {
+        setFormInput(initialState);
+      };
 
     const handleChange = (e) => {
+        const { name, value } = e.target;
+
         setFormInput((prevState) => ({
             ...prevState,
-            [e.target.id]: e.target.value,
+            [name]: value,
         }));
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.warn(formInput);
-    }
+        updateAgent(uid, formInput).then(() => {
+            resetForm();
+            navigation(`/agentHome/${uid}`);
+        });
+    };
+    
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor='picture'>
+            <label htmlFor='imgUrl'>
                 Img Url:
-                <input type='text' id='picture' value={formInput.imgUrl || ''} onChange={handleChange} />
+                <input type='text' id='imgUrl' value={formInput.imgUrl || ''} onChange={handleChange} />
             </label>
             <label htmlFor='name'>
                 Name:
@@ -41,14 +56,6 @@ export default function AgentProfileForm() {
             <label htmlFor='email'>
                 Email:
                 <input type='text' id='phoneNum' value={formInput.email|| ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='email'>
-                Username:
-                <input type='text' id='email' value={formInput.username || ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='password'>
-                Password:
-                <input type='text' id='password' value={formInput.password || ''} onChange={handleChange} />
             </label>
                 <input type="submit" value="Submit" />
         </form>
