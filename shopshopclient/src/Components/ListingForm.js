@@ -62,59 +62,62 @@ export default function ListingForm(listing = {}) {
   return (
     <form className='form-body' onSubmit={handleSubmit}>
         <div className='form-group'>
-
-        <label className='form-label' htmlFor="address">
-            Address:
-        </label>
+            <label className='form-label' htmlFor="address">
+                Address:
+            </label>
             <input type="text" id="address" className='form-input' value={formInput.address || ""} onChange={handleChange}/>
         </div>
-        <label className='form-label' htmlFor="squareFoot">
-            Square Foot:
-<<<<<<< HEAD
-=======
+        <div className='form-group'>
+            <label className='form-label' htmlFor="squareFoot">
+                Square Foot:
+            </label>
             <input type="number" id="squareFoot" className='form-input' value={Number(formInput.squareFoot) || ""} onChange={handleChange}/>
->>>>>>> master
-        </label>
-            <input type="text" id="squareFoot" className='form-input' value={formInput.squareFoot || ""} onChange={handleChange}/>
-        <label className='form-label' htmlFor="rent">
-            Rent:
-<<<<<<< HEAD
-=======
+        </div>
+        <div className='form-group'>
+            <label className='form-label' htmlFor="rent">
+                Rent:
+            </label>
             <input type="number" id="rent" className='form-input' value={formInput.rent || ""} onChange={handleChange}/>
->>>>>>> master
-        </label>
-            <input type="text" id="rent" className='form-input' value={formInput.rent || ""} onChange={handleChange}/>
-        <label className='form-label' htmlFor="city">
-            City:
-        </label>
+        </div>
+        <div className='form-group'>
+            <label className='form-label' htmlFor="city">
+                City:
+            </label>
             <input type="text" id="city" className='form-input' value={formInput.city || ""} onChange={handleChange}/>
-        <label className='form-label' htmlFor="yearBuilt">
-            Year Built:
-<<<<<<< HEAD
-=======
-            <input type="number" id="yearBuilt" className='form-input' min="1900" max="2022" value={formInput.yearBuilt || ""} onChange={handleChange}/>
->>>>>>> master
-        </label>
-            <input type="text" id="yearBuilt" className='form-input' value={formInput.yearBuilt || ""} onChange={handleChange}/>
-        <label className='form-label' htmlFor="description">
-            Description:
-        </label>
-<<<<<<< HEAD
+        </div>
+
+
+        <div className='form-group'>
+            <label className='form-label' htmlFor="yearBuilt">
+                Year Built:
+            </label>
+            <input type="number" id="yearBuilt" className='form-input' 
+            min="1900"
+            // max="2022" 
+             value={formInput.yearBuilt || ""} onChange={handleChange}/>
+        </div>
+
+
+        <div className='form-group'>
+            <label className='form-label' htmlFor="description">
+                Description:
+            </label>
             <input type="text" id="description" className='form-input' value={formInput.description || ""} onChange={handleChange}/>
-        <label className='form-label' htmlFor="agent">
-            Agent:
-=======
-        <label htmlFor="imageUrl">
-            ImageUrl:
-            <input type="text" id="imageUrl" value={formInput.imageUrl || ""} onChange={handleChange}/>
-        </label>
-        <label className='form-label' htmlFor="agentId">
-            Agent:
-            <input type="number" id="agentId" className='form-input' value={formInput.agentId || ""} onChange={handleChange}/>
->>>>>>> master
-        </label>
-        <input type="text" id="agent" className='form-input' value={formInput.agent || ""} onChange={handleChange}/>
-        <input type="submit" value="Submit" className='form-submit'/>
+        </div>
+        <div className='form-group'>
+            <label className='form-label' htmlFor="imageUrl">
+                ImageUrl:
+            </label>
+            <input type="text" id="imageUrl" className='form-input' value={formInput.imageUrl || ""} onChange={handleChange}/>
+        </div>
+        <div className='form-group'>
+          <label className='form-label' htmlFor="agentId">
+                Agent:
+           </label>
+           <input type="number" id="agentId" className='form-input' value={formInput.agentId || ""} onChange={handleChange}/>
+        </div>
+
+        <input type="submit" className='form-btn' value="Submit" />
     </form>
   )
 }

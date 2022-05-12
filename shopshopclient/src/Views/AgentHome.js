@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { getAgentById } from '../Data/AgentsData';
+import { Link } from 'react-router-dom';
 
 export default function AgentHome({ agent }) {
 
@@ -11,7 +9,7 @@ export default function AgentHome({ agent }) {
     <div className='body body-div  agent-home-body'>
         <div className='img'></div>
         <div className="title">
-          <h6>Welcome {agent.Name}</h6>
+          {/* <h6>Welcome {agent.Name}</h6> */}
           <br />
           Agent Home
           <hr className="hr" />

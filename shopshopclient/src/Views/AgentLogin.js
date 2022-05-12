@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { signInUser } from '../Data/AuthAgents';
 
 export default function AgentLogin() {
   const navigate = useNavigate();
-  //const url = `/agentHome/${agent.uid}`;
   const uid = sessionStorage.getItem("uid")
   
 
@@ -22,7 +22,7 @@ export default function AgentLogin() {
           <hr className="hr" />
       </div>
       <div className='div-body'>
-        <div>
+        <div className='btn-div'>
           <button className='login-button btn btn-info' onClick={(e) => handleClick(e)}>Login</button>
         </div>
       </div>

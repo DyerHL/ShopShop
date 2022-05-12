@@ -77,9 +77,12 @@
   }
   .div-body {
     width: 100%;
-    max-width: 28rem;
+    max-width: 70rem;
     margin-top: 2rem;
     margin-bottom: 5rem;
+    .btn-div {
+      text-align: center;
+    }
     .div-body2{
       display: flex;
       flex-direction: row;
@@ -156,27 +159,27 @@
 .form-body {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 28rem;
   justify-content: center;
   align-items: center;
   margin: 0;
   font-size: 1.125rem;
-  color: #333;
   font-family: 'inter';
+  line-height: 1.5;
   .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: .1rem;
+    .form-label {
+      display: block;
+      width: max-content;
+      max-width: 28rem;
+      margin-bottom: -.1rem;
+      margin-left: .2rem;
+    }
+    .form-input {
+      margin-left: .2rem;
+    }
   }
-  .form-label {
-    display: block;
-    width: max-content;
-    // max-width: 28rem;
-  }
-  .form-input {
-    margin-left: .2rem;
-  }
-  .form-submit {
-    margin: .5rem;
+  .form-btn {
+    margin: .2rem;
   }
 }
 
