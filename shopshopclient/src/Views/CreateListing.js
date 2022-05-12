@@ -10,7 +10,9 @@ export default function CreateListing() {
         <hr className='hr' />
       </div>
       <div className='div-body'>
-       <ListingForm />
+        <div className='form-div'>
+          <ListingForm />
+        </div>
       </div>
     </div>
   )
