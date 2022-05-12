@@ -27,9 +27,6 @@ export default function ListingsView() {
         Listings
         <hr className="hr" />
       </div>
-      <Link type="button" className="nav-link" to="/postNewListing">
-        Add New Listing
-      </Link>
 
       <div className="div-body"></div>
       <div className="cards">

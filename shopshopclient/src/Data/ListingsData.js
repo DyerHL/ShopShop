@@ -42,5 +42,4 @@ const deleteListing = (id) =>
       .catch(reject);
   });
 
-export { getListings, getListingsById, deleteListing, createListing };
-export { getListings, getListingsById, deleteListing, getListingsByAgentUid };
+export { getListings, getListingsById, createListing, deleteListing, getListingsByAgentUid };
