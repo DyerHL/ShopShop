@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import PropTypes from "prop-types";
 import About from '../Views/About';
 import ListingsView from '../Views/ListingsView';
@@ -26,21 +26,11 @@ export default function Routing({ agent }) {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/agentLogin" element={<AgentLogin />} />
                 <Route path="/createAgent" element={<CreateAgent />} />
-                {/* Agent Routes  Moving to AgentRoutes.js*/}
-                <Route path="/agentHome/:key" element={<AgentHome agent={agent} />} />
-
-                {/* <Route 
-                path="/agentHome/:key" 
-                element={
-                    <ProtectedRoute agent={agent}>
-                        <AgentHome />
-                    </ProtectedRoute>
-                }
-                /> */}
-                <Route path="/agentProfile/:key" element={<AgentProfile />} />
-                <Route path="/agentsListings/:key" element={<AgentsListingsView />} />
-                <Route path="/editListing" element={<EditListingView />} />
-                <Route path="/postNewListing" element={<CreateListing />} />
+                <Route path="/agentHome/:key" element={agent ? <AgentHome  /> : <AgentLogin />} />
+                <Route path="/agentProfile/:key" element={agent ? <AgentProfile  /> : <AgentLogin />} />
+                <Route path="/agentsListings/:key" element={agent ? <AgentsListingsView  /> : <AgentLogin />} />
+                <Route path="/editListing" element={agent ? <EditListingView  /> : <AgentLogin />} />
+                <Route path="/postNewListing" element={agent ? <CreateListing  /> : <AgentLogin />} />
             </Routes>
         </>
     )

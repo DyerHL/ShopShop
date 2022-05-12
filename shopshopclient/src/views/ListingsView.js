@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import ListingCard from "../Components/ListingCard";
 import { getListings } from "../Data/ListingsData";
 
