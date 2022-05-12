@@ -37,10 +37,10 @@ namespace ShopShop.Controllers
             }
         }
 
-        [HttpGet("Listings/agent/{agentId}")]
-        public ActionResult GetListingByAgentId(int agentId)
+        [HttpGet("Listings/agent/{uid}")]
+        public ActionResult GetListingByAgentUid(string uid)
         {
-            List<Listing> listings = _listingRepo.GetListingsByAgentId(agentId);
+            List<Listing> listings = _listingRepo.GetListingsByAgentUid(uid);
             if (listings == null)
             {
                 return NotFound();

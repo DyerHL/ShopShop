@@ -6,6 +6,10 @@ import ShopShopLogo from '../Assets/ShopShopLogo.png';
 
 
 export default function Navbar({ agent }) {
+
+    const uid = sessionStorage.getItem("uid");
+    const agentsListingsLink = `/agentHome/${uid}`;
+
     return (
         <nav className="navbar navbar-expand navbar-light justify-content-center fixed-top bg-white">
             <Link className="navbar-brand navbar-logo" to="/about">
@@ -46,7 +50,7 @@ export default function Navbar({ agent }) {
                     </li>
                     {agent ? (
                         <li className="nav-item">
-                            <Link className="nav-link" to="/agentHome/:key">
+                            <Link className="nav-link" to={agentsListingsLink}>
                                 AGENT HOME
                             </Link>
                         </li>

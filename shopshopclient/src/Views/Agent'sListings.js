@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AgentListingCard from '../Components/AgentsListingCard.js';
 import nashSkyline from '../Assets/nashSkyline.jpg';
-import { getListingsById } from '../Data/ListingsData.js';
+import { getListingsByAgentUid, getListingsById } from '../Data/ListingsData.js';
 import { useParams } from 'react-router-dom';
 
 export default function AgentsListingsView() {
@@ -11,7 +11,7 @@ export default function AgentsListingsView() {
    useEffect(() => {
        let isMounted = true;
        if (isMounted) {
-           getListingsById(key).then(setListings);
+           getListingsByAgentUid(key).then(setListings);
        }
        return () => {
            isMounted = false;

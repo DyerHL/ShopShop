@@ -12,5 +12,6 @@ namespace ShopShop.DataAccess
         public void AddListing(Listing listing);
         public void UpdateListing(Listing listing);
         public void DeleteListing(int id);
+        List<Listing> GetListingsByAgentUid(string uid);
     }
 }

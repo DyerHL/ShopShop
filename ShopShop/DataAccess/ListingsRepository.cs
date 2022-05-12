@@ -171,6 +171,61 @@ namespace ShopShop.DataAccess
             }
         }
 
+        //Get Listing By Agent Uid
+        public List<Listing> GetListingsByAgentUid(string uid)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                                        SELECT
+                                            l.Id,
+                                            l.Address,
+                                            l.SquareFoot,
+                                            l.Rent,
+                                            l.Details,
+                                            l.YearBuilt,
+                                            l.City,
+                                            l.ImgUrl,
+                                            l.AgentId,
+                                            a.Name,
+                                            a.Uid
+                                        FROM Listing as l
+                                        Left Join Agent as a on l.AgentId = a.Id 
+                                        WHERE a.Uid = @uid
+                                      ";
+
+                    cmd.Parameters.AddWithValue("uid", uid);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    List<Listing> listings = new List<Listing>();
+                    while (reader.Read())
+                    {
+                        Listing listing = new Listing
+                        {
+                            Id = reader.GetInt32(reader.GetOrdinal("Id")),
+                            Address = reader.GetString(reader.GetOrdinal("Address")),
+                            SquareFoot = reader.GetInt32(reader.GetOrdinal("SquareFoot")),
+                            Rent = reader.GetInt32(reader.GetOrdinal("Rent")),
+                            Details = reader.GetString(reader.GetOrdinal("Details")),
+                            YearBuilt = reader.GetInt32(reader.GetOrdinal("YearBuilt")),
+                            City = reader.GetString(reader.GetOrdinal("City")),
+                            ImgUrl = reader.GetString(reader.GetOrdinal("ImgUrl")),
+                            AgentId = reader.GetInt32(reader.GetOrdinal("AgentId"))
+                        };
+
+                        listings.Add(listing);
+
+                    }
+                    reader.Close();
+                    return listings;
+                }
+            }
+        }
+
         public void AddListing(Listing listing)
         {
             using(SqlConnection conn = Connection)

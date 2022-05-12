@@ -25,6 +25,13 @@ const createListing = (listingObj) =>
     .then((response) => resolve(response.data))
     .catch(reject);
  })
+  const getListingsByAgentUid = (uid) =>
+  new Promise((resolve, reject) => {
+    axios
+      .get(`${baseUrl}/listings/listings/agent/${uid}`)
+      .then((response) => resolve(Object.values(response.data)))
+      .catch(reject);
+  });
 
 const deleteListing = (id) =>
   new Promise((resolve, reject) => {
@@ -36,3 +43,4 @@ const deleteListing = (id) =>
   });
 
 export { getListings, getListingsById, deleteListing, createListing };
+export { getListings, getListingsById, deleteListing, getListingsByAgentUid };
