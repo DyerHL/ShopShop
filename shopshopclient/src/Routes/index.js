@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import PropTypes from "prop-types";
 import About from '../Views/About';
 import ListingsView from '../Views/ListingsView';
 import SingleListingView from '../Views/SingleListingView';
@@ -13,8 +14,7 @@ import AgentHome from '../Views/AgentHome';
 import EditListingView from '../Views/EditListing';
 import CreateListing from '../Views/CreateListing';
 
-export default function Routing({agent}) {
-    console.warn("routing", agent);
+export default function Routing({ agent }) {
     return (
         <>
             <Routes>
@@ -35,4 +35,8 @@ export default function Routing({agent}) {
             </Routes>
         </>
     )
+}
+
+Routes.Proptype = {
+    agent: PropTypes.shape(PropTypes.obj).isRequired
 }

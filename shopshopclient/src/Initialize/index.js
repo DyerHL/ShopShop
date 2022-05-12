@@ -12,16 +12,14 @@ function Initialize() {
     auth.onAuthStateChanged((authed) => {
       if(authed) {
         const agentInfoObj = {
-          Name: authed.name,
+          Name: authed.displayName,
           uid: authed.uid,
           accessToken: authed.accessToken,
         };
-        setAgent(agentInfoObj);
-        console.warn("init", agentInfoObj);
-        sessionStorage.setItem("token", authed.accessToken)
-        // agentExisitsinDB(authed.accessToken);
-      // } else if (agent == null) {
-      } else if (agent || agent == null) {
+        sessionStorage.setItem("token", authed.accessToken);
+        sessionStorage.setItem("uid", authed.uid);
+        agentExisitsinDB(authed.accessToken).then(setAgent(agentInfoObj));
+      } else {
         setAgent(false);
       }
     });

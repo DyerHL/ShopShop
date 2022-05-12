@@ -1,15 +1,22 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ShopShopLogo from '../Assets/ShopShopLogo.png';
 import { signOutUser } from "../Data/AuthAgents";
 
 export default function Footer({ agent }) {
+  const nav = useNavigate();
+  
+  const handleClick = (e) => {
+    signOutUser();
+    nav(`/about`);
+  }
+  
   return (
       <div id="footerDiv" className="footer-nav">
         {agent ? (
           <li className="nav-link">
             <button 
-              onClick={signOutUser}
+              onClick={(e) => handleClick(e)}
               type="button"
               className="btn btn-warning footer-btn">
                 Sign Out

@@ -53,6 +53,7 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 3.1rem;
   margin-bottom: 5rem;
@@ -62,17 +63,23 @@
       width: 100%;
       margin-top: 4.8rem;
     }
-  .title {
-    margin: 20px 0px -15px 0px;
+  .title { 
+    width: 100%;
+    max-width: 12rem;
+    text-align: center;  
+    margin: 20px 0px 0px 0px;
     font-size: 1.75em;
     font-weight: bold;
   }
   .hr {
     border: 1px solid black;
-    margin: 3px -45px
+    margin: 3px -45px;
   }
   .div-body {
-    margin: 50px 100px 100px 100px;
+    width: 100%;
+    max-width: 28rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
     .div-body2{
       display: flex;
       flex-direction: row;
@@ -149,23 +156,27 @@
 .form-body {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 28rem;
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: 1rem;
   font-size: 1.125rem;
   color: #333;
   font-family: 'inter';
-  label {
+  .form-group {
     margin-bottom: 1rem;
+  }
+  .form-label {
     display: block;
     width: max-content;
+    // max-width: 28rem;
   }
-
-
-  // min-height: 100vh;
   .form-input {
     margin-left: .2rem;
+  }
+  .form-submit {
+    margin: .5rem;
   }
 }
 

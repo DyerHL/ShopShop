@@ -26,15 +26,15 @@ export default function ListingsView() {
       </div>
 
       <div className="div-body">
-      </div>
-      <div className="cards">
-        {listings.map((listing) => (
-          <ListingCard
-            key= {listing.id}
-            setListings={setListings}
-            listing={listing}
-          />
-        ))}
+        <div className="cards">
+          {listings.map((listing) => (
+            <ListingCard
+              key= {listing.id}
+              setListings={setListings}
+              listing={listing}
+            />
+          ))}
+        </div>
       </div>
 
     </div>

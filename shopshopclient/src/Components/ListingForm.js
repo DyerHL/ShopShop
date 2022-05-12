@@ -27,35 +27,38 @@ export default function ListingForm() {
 
   return (
     <form className='form-body' onSubmit={handleSubmit}>
+        <div className='form-group'>
+
         <label className='form-label' htmlFor="address">
             Address:
-            <input type="text" id="address" className='form-input' value={formInput.address || ""} onChange={handleChange}/>
         </label>
+            <input type="text" id="address" className='form-input' value={formInput.address || ""} onChange={handleChange}/>
+        </div>
         <label className='form-label' htmlFor="squareFoot">
             Square Foot:
-            <input type="text" id="squareFoot" className='form-input' value={formInput.squareFoot || ""} onChange={handleChange}/>
         </label>
+            <input type="text" id="squareFoot" className='form-input' value={formInput.squareFoot || ""} onChange={handleChange}/>
         <label className='form-label' htmlFor="rent">
             Rent:
-            <input type="text" id="rent" className='form-input' value={formInput.rent || ""} onChange={handleChange}/>
         </label>
+            <input type="text" id="rent" className='form-input' value={formInput.rent || ""} onChange={handleChange}/>
         <label className='form-label' htmlFor="city">
             City:
-            <input type="text" id="city" className='form-input' value={formInput.city || ""} onChange={handleChange}/>
         </label>
+            <input type="text" id="city" className='form-input' value={formInput.city || ""} onChange={handleChange}/>
         <label className='form-label' htmlFor="yearBuilt">
             Year Built:
-            <input type="text" id="yearBuilt" className='form-input' value={formInput.yearBuilt || ""} onChange={handleChange}/>
         </label>
+            <input type="text" id="yearBuilt" className='form-input' value={formInput.yearBuilt || ""} onChange={handleChange}/>
         <label className='form-label' htmlFor="description">
             Description:
-            <input type="text" id="description" className='form-input' value={formInput.description || ""} onChange={handleChange}/>
         </label>
+            <input type="text" id="description" className='form-input' value={formInput.description || ""} onChange={handleChange}/>
         <label className='form-label' htmlFor="agent">
             Agent:
-            <input type="text" id="agent" className='form-input' value={formInput.agent || ""} onChange={handleChange}/>
         </label>
-        <input type="submit" value="Submit" />
+        <input type="text" id="agent" className='form-input' value={formInput.agent || ""} onChange={handleChange}/>
+        <input type="submit" value="Submit" className='form-submit'/>
     </form>
   )
 }
