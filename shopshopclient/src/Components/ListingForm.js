@@ -85,19 +85,15 @@ export default function ListingForm(listing = {}) {
             </label>
             <input type="text" id="city" className='form-input' value={formInput.city || ""} onChange={handleChange}/>
         </div>
-
-
         <div className='form-group'>
             <label className='form-label' htmlFor="yearBuilt">
                 Year Built:
             </label>
             <input type="number" id="yearBuilt" className='form-input' 
             min="1900"
-            // max="2022" 
+            max="2022" 
              value={formInput.yearBuilt || ""} onChange={handleChange}/>
         </div>
-
-
         <div className='form-group'>
             <label className='form-label' htmlFor="description">
                 Description:
@@ -116,7 +112,6 @@ export default function ListingForm(listing = {}) {
            </label>
            <input type="number" id="agentId" className='form-input' value={formInput.agentId || ""} onChange={handleChange}/>
         </div>
-
         <input type="submit" className='form-btn' value="Submit" />
     </form>
   )

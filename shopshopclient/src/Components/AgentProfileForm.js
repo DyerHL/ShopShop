@@ -25,32 +25,45 @@ export default function AgentProfileForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor='picture'>
-                Img Url:
-                <input type='text' id='picture' value={formInput.imgUrl || ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='name'>
-                Name:
-                <input type='text' id='name' value={formInput.name || ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='phone'>
-                Phone Number:
-                <input type='text' id='phone' value={formInput.phone || ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='email'>
-                Email:
-                <input type='text' id='phoneNum' value={formInput.email|| ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='email'>
-                Username:
-                <input type='text' id='email' value={formInput.username || ''} onChange={handleChange} />
-            </label>
-            <label htmlFor='password'>
-                Password:
-                <input type='text' id='password' value={formInput.password || ''} onChange={handleChange} />
-            </label>
-                <input type="submit" value="Submit" />
+        <form className='form-body' onSubmit={handleSubmit}>
+            <div className='form-group'>
+                <label className='form-label' htmlFor='picture'>
+                    Img Url:
+                </label>
+                <input type='text' id='picture' className='form-input' value={formInput.imgUrl || ''} onChange={handleChange} />
+            </div>
+            <div className='form-group'>
+                <label className='form-label' htmlFor='name'>
+                    Name:
+                </label>
+                <input type='text' id='name' className='form-input' value={formInput.name || ''} onChange={handleChange} />
+
+            </div>
+            <div className='form-group'>
+                <label className='form-label' htmlFor='phone'>
+                    Phone Number:
+                </label>
+                <input type='text' id='phone' className='form-input' value={formInput.phone || ''} onChange={handleChange} />
+            </div>
+            <div className='form-group'>
+                <label className='form-label' htmlFor='email'>
+                    Email:
+                </label>
+                <input type='text' id='phoneNum' className='form-input' value={formInput.email|| ''} onChange={handleChange} />
+            </div>
+            <div className='form-group'>
+                <label className='form-label' htmlFor='email'>
+                    Username:
+                </label>
+                <input type='text' id='email' className='form-input' value={formInput.username || ''} onChange={handleChange} />
+            </div>
+            <div className='form-group'>
+                <label className='form-label' htmlFor='password'>
+                    Password:
+                </label>
+                <input type='text' id='password' className='form-input' value={formInput.password || ''} onChange={handleChange} />
+            </div>
+            <input type="submit" className='form-btn' value="Submit" />
         </form>
       )
     }

@@ -15,13 +15,17 @@ export default function AgentProfile() {
   }, []);
 
   return (
-      <div className='body-div agent-profile-body'>
-          <div className='page-title'>Agent Profile</div>
-          <hr />
-          <div className='div-1'>
+      <div className='body agent-profile-body'>
+      <div className='img'></div>
+      <div className="title">
+          Agent Profile
+          <hr className="hr" />
+      </div>
+          <div className='div-body profile-body'>
             <AgentProfileForm key={agent.id} editItem={editItem} />
             <div className='profile-img'>
-              <img src={agent.imgURL} style={{ width: '10rem'}} /> {/*temp styling*/}
+              {/* <img src={agent.imgURL} style={{ width: '10rem'}} /> temp styling */}
+              <img src="https://wgfuljukrcejubfajlyl.supabase.co/storage/v1/object/sign/images/Blank Profile Image.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJpbWFnZXMvQmxhbmsgUHJvZmlsZSBJbWFnZS5wbmciLCJpYXQiOjE2NTI1NDAxNTIsImV4cCI6MTk2NzkwMDE1Mn0.4zraJyf51Uc5y0wEalkBqI5tRhkCoonrBdpNPx2SL9c" alt="profile" />
             </div>
           </div>
       </div>
